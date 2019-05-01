@@ -59,8 +59,10 @@ body .contenedorGeneral nav .header input {
   box-sizing: border-box;
   padding-left: 3px;
   font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
 }
-/* line 66, ../sass/style.scss */
+/* line 68, ../sass/style.scss */
 body .contenedorGeneral .contenedorSecundario {
   height: 100%;
   display: flex;
@@ -68,7 +70,7 @@ body .contenedorGeneral .contenedorSecundario {
   justify-content: flex-start;
   align-items: flex-start;
 }
-/* line 71, ../sass/style.scss */
+/* line 73, ../sass/style.scss */
 body .contenedorGeneral .contenedorSecundario ul {
   width: 95px;
   height: 100%;
@@ -77,7 +79,7 @@ body .contenedorGeneral .contenedorSecundario ul {
   padding: 0;
   list-style: none;
 }
-/* line 80, ../sass/style.scss */
+/* line 82, ../sass/style.scss */
 body .contenedorGeneral .contenedorSecundario ul li {
   width: 100%;
   height: 95px;
@@ -87,14 +89,14 @@ body .contenedorGeneral .contenedorSecundario ul li {
   align-items: center;
   box-sizing: border-box;
 }
-/* line 86, ../sass/style.scss */
+/* line 88, ../sass/style.scss */
 body .contenedorGeneral .contenedorSecundario ul li .fas, body .contenedorGeneral .contenedorSecundario ul li .far {
   width: 20px;
   height: 20px;
   color: #838D91;
   margin-bottom: 5px;
 }
-/* line 93, ../sass/style.scss */
+/* line 95, ../sass/style.scss */
 body .contenedorGeneral .contenedorSecundario ul li p {
   margin: 0;
   text-transform: uppercase;
@@ -102,17 +104,17 @@ body .contenedorGeneral .contenedorSecundario ul li p {
   text-align: center;
   font-size: 11px;
 }
-/* line 104, ../sass/style.scss */
+/* line 106, ../sass/style.scss */
 body .contenedorGeneral .contenedorSecundario .contenedor {
   width: 100%;
   height: auto;
 }
-/* line 108, ../sass/style.scss */
+/* line 110, ../sass/style.scss */
 body .contenedorGeneral .contenedorSecundario .contenedor .presentacion {
   width: 100%;
   height: 384px;
   box-sizing: border-box;
-  background-image: url(./img/batman.jpg);
+  background-image: url("../img/batman.jpg");
   background-repeat: no-repeat;
   background-color: grey;
   display: flex;
@@ -120,7 +122,7 @@ body .contenedorGeneral .contenedorSecundario .contenedor .presentacion {
   justify-content: center;
   align-items: center;
 }
-/* line 117, ../sass/style.scss */
+/* line 119, ../sass/style.scss */
 body .contenedorGeneral .contenedorSecundario .contenedor .presentacion h1 {
   margin: 0;
   font-family: "Roboto", sans-serif;
@@ -128,15 +130,15 @@ body .contenedorGeneral .contenedorSecundario .contenedor .presentacion h1 {
   font-size: 28px;
   font-weight: 500;
 }
-/* line 128, ../sass/style.scss */
+/* line 130, ../sass/style.scss */
 body .contenedorGeneral .contenedorSecundario .contenedorPeliculas {
   width: 100%;
   height: 100vh;
   box-sizing: border-box;
-  padding: 20px 30px 0 30px;
+  padding: 15px;
   background-color: aqua;
 }
-/* line 135, ../sass/style.scss */
+/* line 137, ../sass/style.scss */
 body .contenedorGeneral .contenedorSecundario .contenedorPeliculas .informacion {
   width: 100%;
   display: flex;
@@ -144,13 +146,13 @@ body .contenedorGeneral .contenedorSecundario .contenedorPeliculas .informacion 
   justify-content: space-between;
   align-items: center;
 }
-/* line 139, ../sass/style.scss */
+/* line 141, ../sass/style.scss */
 body .contenedorGeneral .contenedorSecundario .contenedorPeliculas .informacion h2 {
   font-size: 18px;
   color: #838D91;
   font-weight: 300;
 }
-/* line 144, ../sass/style.scss */
+/* line 146, ../sass/style.scss */
 body .contenedorGeneral .contenedorSecundario .contenedorPeliculas .informacion p {
   font-size: 12px;
   color: #838D91;

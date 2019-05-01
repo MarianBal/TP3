@@ -59,6 +59,8 @@ body{
                     @include borderBox();
                     padding-left: 3px;
                     font-family: $fuente;
+                    font-weight: 300;
+                    font-size: 16px;
                 }
             }
         }
@@ -109,7 +111,7 @@ body{
                     width: 100%;
                     height: 384px;
                     @include borderBox();
-                    background-image: url(./img/batman.jpg);
+                    background-image: url("../img/batman.jpg");
                     background-repeat: no-repeat;
                     background-color: grey;
                     @include flexbox(row, center, center);
@@ -129,7 +131,7 @@ body{
                 width:100%;
                 height: 100vh;
                 @include borderBox();
-                padding: 20px 30px 0 30px;
+                padding: 15px;
                 background-color:aqua;
 
                 .informacion{
