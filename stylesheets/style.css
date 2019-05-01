@@ -1,0 +1,141 @@
+/* line 14, ../sass/style.scss */
+body {
+  background-color: red;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+/* line 20, ../sass/style.scss */
+body .contenedorGeneral {
+  width: 100%;
+  height: 100%;
+}
+/* line 24, ../sass/style.scss */
+body .contenedorGeneral nav {
+  width: 100%;
+  height: 75px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+/* line 30, ../sass/style.scss */
+body .contenedorGeneral nav .logo {
+  width: 95px;
+  height: 100%;
+  background-color: #bc3b69;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+/* line 37, ../sass/style.scss */
+body .contenedorGeneral nav .logo svg {
+  width: 45px;
+  height: 40px;
+}
+/* line 43, ../sass/style.scss */
+body .contenedorGeneral nav .header {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  color: #838D91;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+/* line 50, ../sass/style.scss */
+body .contenedorGeneral nav .header .fas {
+  width: 18px;
+  margin: 0 5px 0 2%;
+}
+/* line 55, ../sass/style.scss */
+body .contenedorGeneral nav .header input {
+  width: 80%;
+  height: 30px;
+  border: none;
+  box-sizing: border-box;
+  padding-left: 3px;
+  font-family: "Roboto", sans-serif;
+}
+/* line 66, ../sass/style.scss */
+body .contenedorGeneral .contenedorSecundario {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+/* line 71, ../sass/style.scss */
+body .contenedorGeneral .contenedorSecundario ul {
+  width: 95px;
+  height: 100%;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* line 80, ../sass/style.scss */
+body .contenedorGeneral .contenedorSecundario ul li {
+  width: 100%;
+  height: 95px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+/* line 86, ../sass/style.scss */
+body .contenedorGeneral .contenedorSecundario ul li .fas, body .contenedorGeneral .contenedorSecundario ul li .far {
+  width: 20px;
+  height: 20px;
+  color: #838D91;
+  margin-bottom: 5px;
+}
+/* line 93, ../sass/style.scss */
+body .contenedorGeneral .contenedorSecundario ul li p {
+  margin: 0;
+  text-transform: uppercase;
+  color: #838D91;
+  text-align: center;
+  font-size: 11px;
+}
+/* line 104, ../sass/style.scss */
+body .contenedorGeneral .contenedorSecundario .contenedor {
+  width: 100%;
+  height: auto;
+}
+/* line 108, ../sass/style.scss */
+body .contenedorGeneral .contenedorSecundario .contenedor .presentacion {
+  width: 100%;
+  height: 384px;
+  box-sizing: border-box;
+  background-image: url(./img/batman.jpg);
+  background-repeat: no-repeat;
+  background-color: grey;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+/* line 117, ../sass/style.scss */
+body .contenedorGeneral .contenedorSecundario .contenedor .presentacion h1 {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+}
+/* line 126, ../sass/style.scss */
+body .contenedorGeneral .contenedorSecundario .contenedorPeliculas {
+  width: 100%;
+  height: 100vh;
+  background-color: aqua;
+}
+/* line 131, ../sass/style.scss */
+body .contenedorGeneral .contenedorSecundario .contenedorPeliculas ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

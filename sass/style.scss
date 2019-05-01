@@ -1,0 +1,137 @@
+@import "./partials/base";
+
+@mixin flexbox ($flexDirection, $justifyContent, $alignItems){
+    display:flex;
+    flex-direction: $flexDirection;
+    justify-content:$justifyContent;
+    align-items:$alignItems;
+}
+
+@mixin borderBox(){
+    box-sizing: border-box;
+}
+
+body{
+    background-color: red;
+    // #f8f8f8;
+    margin: 0;
+    font-family: $fuente;
+
+    .contenedorGeneral{
+        width: 100%;
+        height: 100%;
+        
+        nav{
+            width: 100%;
+            height: 75px;
+            background-color: $fondo;
+            @include flexbox(row, flex-start, center);
+
+            .logo{
+                width: 95px;
+                height: 100%;
+                background-color: $logo;
+                @include flexbox(row, center, center);
+                @include borderBox();             
+
+                svg{
+                    width: 45px;
+                    height: 40px;
+                }
+            }
+
+            .header{  
+                width: 100%;
+                height: 100%;
+                @include borderBox();
+                color:$color-tipo;
+                @include flexbox(row, flex-start, center);
+
+                .fas{
+                    width: 18px;
+                    margin: 0 5px 0 2%;;
+                }
+
+                input{
+                    width: 80%;
+                    height: 30px;
+                    border:none;
+                    @include borderBox();
+                    padding-left: 3px;
+                    font-family: $fuente;
+                }
+            }
+        }
+        
+        .contenedorSecundario{
+            height: 100%;
+            @include flexbox(row, flex-start ,flex-start );
+            
+            
+            ul{
+                width: 95px;
+                height: 100%;
+                background-color: $fondo;
+                margin: 0;
+                padding: 0;
+                list-style:none;
+        
+        
+                li{
+                    width: 100%;
+                    height: 95px;
+                    @include flexbox(column, center, center);
+                    @include borderBox();
+
+                    .fas, .far{
+                        width: 20px;
+                        height: 20px;
+                        color: $color-tipo;
+                        margin-bottom: 5px;
+                    }
+
+                    p{
+                        margin: 0;
+                        text-transform: uppercase;
+                        color: $color-tipo;
+                        text-align: center;
+                        font-size: 11px;
+                    }
+                    
+                }
+            }
+
+            .contenedor{
+                width: 100%;
+                height: auto;
+
+                .presentacion{
+                    width: 100%;
+                    height: 384px;
+                    @include borderBox();
+                    background-image: url(./img/batman.jpg);
+                    background-repeat: no-repeat;
+                    background-color: grey;
+                    @include flexbox(row, center, center);
+
+                    h1{
+                        margin: 0;
+                        font-family: $fuente;
+                        text-transform: uppercase;
+
+                    }
+                }
+            }
+
+            .contenedorPeliculas{
+                width:100%;
+                height: 100vh;
+                background-color:aqua;
+
+                ul{
+                    @include flexbox (row, space-between, center);
+                }
+            }            
+        }
+    }
+}
