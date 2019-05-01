@@ -59,6 +59,7 @@ body{
                 #capa_1{
                     width: 45px;
                     height: 40px;
+                    margin:0;
                 }
             }       
         } 
@@ -95,7 +96,7 @@ body{
             }
 
             .presentacion{
-                @include flexbox(row, center, center);
+                // @include flexbox(row, center, center);
                 width: 100%;
                 height: $alto;
                 background: url("../img/batman.jpg");
@@ -103,13 +104,16 @@ body{
                 background-size: cover;
                 background-position: 50% 50%;
                 display:block;
+                position: relative;
 
                 .opacidad{
                     width:100%;
                     height: $alto;
+                    @include borderBox();
                     position: absolute;
                     background:white;
                     opacity:0.7;
+                    margin:0;
                 }
 
                 .texto{
@@ -128,102 +132,15 @@ body{
                     }
                 }
             }
-            // .presentacion::before{
-              
-            //     position: absolute;
-            //     top: 0;
-            //     left: 0;
-            //     width: 100%;
-            //     height: 100%;
-            //     background: hsla(0,0%,97%,.7);
 
-            // }
+            .contenedorPeluculas{
+                width: 100%;
+                height: auto; 
+                background-color:blue;
+            }
+
         }
     }
 }
         
-        // .contenedorSecundario{
-        //     height: 100%;
-        //     @include flexbox(row, flex-start ,flex-start );
-            
-            
-        //     ul{
-        //         width: 95px;
-        //         height: 100%;
-        //         background-color: $fondo;
-        //         margin: 0;
-        //         padding: 0;
-        //         
-        
-        
-        //         li{
-        //             width: 100%;
-        //             height: 95px;
-        //             @include flexbox(column, center, center);
-        //             @include borderBox();
-
-        //             .fas, .far{
-        //                 width: 20px;
-        //                 height: 20px;
-        //                 color: $color-tipo;
-        //                 margin-bottom: 5px;
-        //             }
-
-        //             p{
-        //                 margin: 0;
-        //                 text-transform: uppercase;
-        //                 color: $color-tipo;
-        //                 text-align: center;
-        //                 font-size: 11px;
-        //             }
-                    
-        //         }
-        //     }
-
-        //     .contenedor{
-        //         width: 100%;
-        //         height: auto;
-
-        //         .presentacion{
-        //             width: 100%;
-        //             height: 384px;
-        //             @include borderBox();
-        //             background-image: url("../img/batman.jpg");
-        //             background-repeat: no-repeat;
-        //             background-color: grey;
-        //             @include flexbox(row, center, center);
-
-        //             h1{
-        //                 margin: 0;
-        //                 font-family: $fuente;
-        //                 text-transform: uppercase;
-        //                 font-size: 28px;
-        //                 font-weight: 500;
-
-        //             }
-        //         }
-        //     }
-
-        //     .contenedorPeliculas{
-        //         width:100%;
-        //         height: 100vh;
-        //         @include borderBox();
-        //         padding: 15px;
-        //         background-color:aqua;
-
-        //         .informacion{
-        //             width:100%;
-        //             @include flexbox (row, space-between, center);
-
-        //             h2{
-        //                 font-size: 18px;
-        //                 color: $color-tipo;
-        //                 font-weight: 300;
-        //             }
-        //             p{
-        //                 font-size: 12px;
-        //                 color:$color-tipo;
-        //             }
-        //         }
-        //     }            
-        // }
+   
