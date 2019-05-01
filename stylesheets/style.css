@@ -16,6 +16,7 @@ body .contenedorGeneral {
 }
 /* line 25, ../sass/style.scss */
 body .contenedorGeneral ul {
+  height: 100vh;
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -25,22 +26,31 @@ body .contenedorGeneral ul {
   margin: 0;
   padding: 0;
 }
-/* line 32, ../sass/style.scss */
+/* line 33, ../sass/style.scss */
 body .contenedorGeneral ul li {
   width: 95px;
   height: 95px;
   background-color: white;
+  font-size: 9px;
+  text-transform: uppercase;
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-/* line 38, ../sass/style.scss */
+/* line 42, ../sass/style.scss */
 body .contenedorGeneral ul li svg {
   width: 20px;
-  color: #838D91;
+  height: 20px;
+  color: white;
+  margin-bottom: 5px;
 }
-/* line 44, ../sass/style.scss */
+/* line 49, ../sass/style.scss */
+body .contenedorGeneral ul li p {
+  margin: 0;
+}
+/* line 54, ../sass/style.scss */
 body .contenedorGeneral ul #logo {
   height: 75px;
   background-color: #bc3b69;
@@ -49,8 +59,35 @@ body .contenedorGeneral ul #logo {
   justify-content: center;
   align-items: center;
 }
-/* line 49, ../sass/style.scss */
+/* line 59, ../sass/style.scss */
 body .contenedorGeneral ul #logo #capa_1 {
   width: 45px;
   height: 40px;
+}
+/* line 66, ../sass/style.scss */
+body .contenedorGeneral .nav {
+  width: 100%;
+  height: 75px;
+  background-color: white;
+  box-sizing: border-box;
+  padding-left: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+/* line 74, ../sass/style.scss */
+body .contenedorGeneral .nav svg {
+  width: 18px;
+  height: 18px;
+  color: #838D91;
+}
+/* line 81, ../sass/style.scss */
+body .contenedorGeneral .nav input {
+  width: 70%;
+  font-weight: 300;
+  font-size: 16px;
+  border: none;
+  box-sizing: border-box;
+  margin-left: 15px;
 }

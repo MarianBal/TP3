@@ -23,6 +23,7 @@ body{
         @include flexbox(row, flex-start, flex-start);
         
         ul{
+            height: 100vh;
             list-style:none;
             @include flexbox(column, flex-start,center);
             background-color: $fondo;
@@ -33,11 +34,20 @@ body{
                 width: 95px;
                 height: 95px;
                 background-color: $fondo;
+                font-size: 9px;
+                text-transform: uppercase;
+                text-align: center;
                 @include flexbox(column, center, center);
 
                 svg{
                     width: 20px;
-                    color: $color-tipo;    
+                    height: 20px;
+                    color: $fondo;  
+                    margin-bottom: 5px;
+                }
+
+                p{
+                    margin:0;
                 }
             }
 
@@ -50,11 +60,33 @@ body{
                     width: 45px;
                     height: 40px;
                 }
+            }       
+        } 
+        
+        .nav{
+            width:100%;
+            height: 75px;
+            background-color:$fondo;
+            @include borderBox();
+            padding-left: 40px;
+            @include flexbox(row, flex-start, center);
+
+            svg{
+                width: 18px;
+                height: 18px;
+                color:$color-tipo;
 
             }
-                
 
-        }    
+            input{
+                width: 70%;
+                font-weight: 300;
+                font-size: 16px;
+                border:none;
+                @include borderBox();
+                margin-left: 15px;
+            }
+        }
     }
 }
         //     width: 100%;
