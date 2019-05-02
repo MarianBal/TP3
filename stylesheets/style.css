@@ -25,8 +25,11 @@ body .contenedorGeneral ul {
   background-color: white;
   margin: 0;
   padding: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
-/* line 33, ../sass/style.scss */
+/* line 36, ../sass/style.scss */
 body .contenedorGeneral ul li {
   width: 95px;
   height: 95px;
@@ -39,18 +42,18 @@ body .contenedorGeneral ul li {
   justify-content: center;
   align-items: center;
 }
-/* line 42, ../sass/style.scss */
+/* line 45, ../sass/style.scss */
 body .contenedorGeneral ul li svg {
   width: 20px;
   height: 20px;
   color: white;
   margin-bottom: 5px;
 }
-/* line 49, ../sass/style.scss */
+/* line 52, ../sass/style.scss */
 body .contenedorGeneral ul li p {
   margin: 0;
 }
-/* line 54, ../sass/style.scss */
+/* line 57, ../sass/style.scss */
 body .contenedorGeneral ul #logo {
   height: 75px;
   background-color: #bc3b69;
@@ -59,24 +62,14 @@ body .contenedorGeneral ul #logo {
   justify-content: center;
   align-items: center;
 }
-/* line 59, ../sass/style.scss */
+/* line 62, ../sass/style.scss */
 body .contenedorGeneral ul #logo #capa_1 {
   width: 45px;
   height: 40px;
   margin: 0;
 }
-/* line 67, ../sass/style.scss */
-body .contenedorGeneral .contenedorVertical {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-/* line 73, ../sass/style.scss */
-body .contenedorGeneral .contenedorVertical .nav {
+/* line 70, ../sass/style.scss */
+body .contenedorGeneral .nav {
   width: 100%;
   height: 75px;
   background-color: white;
@@ -86,15 +79,18 @@ body .contenedorGeneral .contenedorVertical .nav {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 /* line 81, ../sass/style.scss */
-body .contenedorGeneral .contenedorVertical .nav svg {
+body .contenedorGeneral .nav svg {
   width: 18px;
   height: 18px;
   color: #838D91;
 }
-/* line 88, ../sass/style.scss */
-body .contenedorGeneral .contenedorVertical .nav input {
+/* line 87, ../sass/style.scss */
+body .contenedorGeneral .nav input {
   width: 70%;
   font-weight: 300;
   font-size: 16px;
@@ -102,7 +98,17 @@ body .contenedorGeneral .contenedorVertical .nav input {
   box-sizing: border-box;
   margin-left: 15px;
 }
-/* line 98, ../sass/style.scss */
+/* line 97, ../sass/style.scss */
+body .contenedorGeneral .contenedorVertical {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+/* line 103, ../sass/style.scss */
 body .contenedorGeneral .contenedorVertical .presentacion {
   width: 100%;
   height: 384px;
@@ -113,7 +119,7 @@ body .contenedorGeneral .contenedorVertical .presentacion {
   display: block;
   position: relative;
 }
-/* line 109, ../sass/style.scss */
+/* line 114, ../sass/style.scss */
 body .contenedorGeneral .contenedorVertical .presentacion .opacidad {
   width: 100%;
   height: 384px;
@@ -123,7 +129,7 @@ body .contenedorGeneral .contenedorVertical .presentacion .opacidad {
   opacity: 0.7;
   margin: 0;
 }
-/* line 119, ../sass/style.scss */
+/* line 124, ../sass/style.scss */
 body .contenedorGeneral .contenedorVertical .presentacion .texto {
   width: 100%;
   height: 384px;
@@ -133,17 +139,63 @@ body .contenedorGeneral .contenedorVertical .presentacion .texto {
   justify-content: center;
   align-items: center;
 }
-/* line 126, ../sass/style.scss */
+/* line 131, ../sass/style.scss */
 body .contenedorGeneral .contenedorVertical .presentacion .texto h1 {
   font-size: 28px;
   font-weight: 500;
   margin: 0;
   text-transform: uppercase;
-  color: black;
+  color: #081c24;
 }
-/* line 136, ../sass/style.scss */
-body .contenedorGeneral .contenedorVertical .contenedorPeluculas {
+/* line 141, ../sass/style.scss */
+body .contenedorGeneral .contenedorVertical .contenedorPeliculas {
   width: 100%;
-  height: auto;
-  background-color: blue;
+  box-sizing: border-box;
+  padding: 25px;
+}
+/* line 146, ../sass/style.scss */
+body .contenedorGeneral .contenedorVertical .contenedorPeliculas nav {
+  width: 100%;
+  padding: 23px 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+/* line 152, ../sass/style.scss */
+body .contenedorGeneral .contenedorVertical .contenedorPeliculas nav h2 {
+  font-size: 18px;
+  font-weight: 300;
+  color: #081c24;
+  margin: 0;
+}
+/* line 159, ../sass/style.scss */
+body .contenedorGeneral .contenedorVertical .contenedorPeliculas nav h3 {
+  font-size: 12px;
+  font-weight: 300;
+  margin: 0;
+}
+/* line 166, ../sass/style.scss */
+body .contenedorGeneral .contenedorVertical .contenedorPeliculas ul {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  background-color: #f8f8f8;
+}
+/* line 172, ../sass/style.scss */
+body .contenedorGeneral .contenedorVertical .contenedorPeliculas ul li {
+  width: 25%;
+  padding: 15px;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+}
+/* line 179, ../sass/style.scss */
+body .contenedorGeneral .contenedorVertical .contenedorPeliculas ul li .imagen {
+  width: 100%;
+  height: 2000px;
+  background-color: red;
 }

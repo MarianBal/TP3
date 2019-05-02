@@ -12,7 +12,7 @@
 }
 
 body{
-    background-color:#f8f8f8;
+    background-color:$contenedor;
     margin: 0;
 
     .contenedorGeneral{
@@ -29,7 +29,10 @@ body{
             background-color: $fondo;
             margin: 0;
             padding:0;
-                
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+           
             li{
                 width: 95px;
                 height: 95px;
@@ -63,37 +66,39 @@ body{
                 }
             }       
         } 
+
+        .nav{
+            width:100%;
+            height: 75px;
+            background-color:$fondo;
+            @include borderBox();
+            padding-left: 40px;
+            @include flexbox(row, flex-start, center);
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+
+            svg{
+                width: 18px;
+                height: 18px;
+                color:$color-tipo;
+            }
+
+            input{
+                width: 70%;
+                font-weight: 300;
+                font-size: 16px;
+                border:none;
+                @include borderBox();
+                margin-left: 15px;
+            }
+        }
         
         .contenedorVertical{
             width:100%;
             margin:0;
             padding:0;
             @include flexbox(column, flex-start, center);
-
-            .nav{
-                width:100%;
-                height: 75px;
-                background-color:$fondo;
-                @include borderBox();
-                padding-left: 40px;
-                @include flexbox(row, flex-start, center);
-
-                svg{
-                    width: 18px;
-                    height: 18px;
-                    color:$color-tipo;
-
-                }
-
-                input{
-                    width: 70%;
-                    font-weight: 300;
-                    font-size: 16px;
-                    border:none;
-                    @include borderBox();
-                    margin-left: 15px;
-                }
-            }
 
             .presentacion{
                 // @include flexbox(row, center, center);
@@ -128,15 +133,62 @@ body{
                         font-weight: 500;
                         margin:0;
                         text-transform: uppercase;
-                        color:black;
+                        color: $oscuro;
                     }
                 }
             }
 
-            .contenedorPeluculas{
-                width: 100%;
-                height: auto; 
-                background-color:blue;
+            .contenedorPeliculas{
+                width: 100%; 
+                @include borderBox();
+                padding: 25px;
+
+                nav{
+                    width:100%;
+                    padding:23px 15px;
+                    @include borderBox();
+                    @include flexbox(row, space-between, center);
+
+                    h2{
+                        font-size:18px;
+                        font-weight:300;
+                        color:$oscuro;
+                        margin:0;
+                    }
+
+                    h3{
+                        font-size:12px;
+                        font-weight:300; 
+                        margin:0;
+                    }
+                }
+
+                ul{
+                    width:100%;
+                    @include flexbox(row, flex-start, flex-start);
+                    flex-wrap: wrap;
+                    background-color:$contenedor;
+
+                    li{
+                        width: 25%;
+                        
+                        padding: 15px;
+                        @include borderBox();
+                        background-color:$contenedor;
+
+                        .imagen{
+                            width:100%;
+                            height: 2000px;
+                            background-color:red;
+                        
+                            // img{
+                            //     width: 100%;
+                            //     height:auto;
+                            // }
+                        }   
+                    }
+
+                }
             }
 
         }
