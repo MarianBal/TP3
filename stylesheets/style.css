@@ -82,14 +82,15 @@ body .contenedorGeneral .nav {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  z-index: 1;
 }
-/* line 81, ../sass/style.scss */
+/* line 82, ../sass/style.scss */
 body .contenedorGeneral .nav svg {
   width: 18px;
   height: 18px;
   color: #838D91;
 }
-/* line 87, ../sass/style.scss */
+/* line 88, ../sass/style.scss */
 body .contenedorGeneral .nav input {
   width: 70%;
   font-weight: 300;
@@ -98,7 +99,7 @@ body .contenedorGeneral .nav input {
   box-sizing: border-box;
   margin-left: 15px;
 }
-/* line 97, ../sass/style.scss */
+/* line 98, ../sass/style.scss */
 body .contenedorGeneral .contenedorVertical {
   width: 100%;
   margin: 0;
@@ -108,7 +109,7 @@ body .contenedorGeneral .contenedorVertical {
   justify-content: flex-start;
   align-items: center;
 }
-/* line 103, ../sass/style.scss */
+/* line 104, ../sass/style.scss */
 body .contenedorGeneral .contenedorVertical .presentacion {
   width: 100%;
   height: 384px;
@@ -187,15 +188,24 @@ body .contenedorGeneral .contenedorVertical .contenedorPeliculas ul {
   background-color: #f8f8f8;
 }
 /* line 172, ../sass/style.scss */
-body .contenedorGeneral .contenedorVertical .contenedorPeliculas ul li {
-  width: 25%;
-  padding: 15px;
+body .contenedorGeneral .contenedorVertical .contenedorPeliculas ul .pelis {
+  width: 20%;
+  padding: 30px;
   box-sizing: border-box;
-  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
-/* line 179, ../sass/style.scss */
-body .contenedorGeneral .contenedorVertical .contenedorPeliculas ul li .imagen {
+/* line 181, ../sass/style.scss */
+body .contenedorGeneral .contenedorVertical .contenedorPeliculas ul .pelis .imagen img {
   width: 100%;
-  height: 2000px;
-  background-color: red;
+  height: auto;
+}
+/* line 187, ../sass/style.scss */
+body .contenedorGeneral .contenedorVertical .contenedorPeliculas ul .pelis .tituloPeli {
+  font-size: 14px;
+  color: #838D91;
+  margin-top: 15px;
+  text-transform: capitalize;
 }
