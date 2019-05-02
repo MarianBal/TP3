@@ -196,5 +196,20 @@ body{
         }
     }
 }
+
+@media screen and (max-width: 768px){
+
+    .contenedorGeneral{
+        ul{
+            height: auto;
+
+            .otrosLi{
+                display:none;
+            }
+        }
+    }
+
+
+}
         
    

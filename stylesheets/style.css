@@ -209,3 +209,14 @@ body .contenedorGeneral .contenedorVertical .contenedorPeliculas ul .pelis .titu
   margin-top: 15px;
   text-transform: capitalize;
 }
+
+@media screen and (max-width: 768px) {
+  /* line 203, ../sass/style.scss */
+  .contenedorGeneral ul {
+    height: auto;
+  }
+  /* line 206, ../sass/style.scss */
+  .contenedorGeneral ul .otrosLi {
+    display: none;
+  }
+}
