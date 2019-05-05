@@ -225,4 +225,104 @@ body{
    
 }
         
-   
+@media screen and (max-width: 768px) {
+
+    body{
+
+        .contenedorGeneral{
+    
+            nav{
+                height: 50px;
+                
+                #logo{
+                    width:55px;
+                    height: 50px;
+    
+                    #capa_1{
+                        width: 35px;
+                        height: 31px;
+                    }
+                } 
+    
+                .buscador{
+                    width: 75%;
+                    height: 50px;
+                    margin-right: 4%;
+        
+                    svg{
+                        width: 14px;
+                        height: 14px;
+                    }
+        
+                    input{
+                        width: 70%;
+                        font-weight: 300;
+                        font-size: 16px;
+                        border:none;
+                        @include borderBox();
+                        margin-left: 15px;
+                    }
+                }
+    
+                #hamburguesa{
+                    display:inline;
+                    margin-right: 2%;
+                }
+            }
+    
+            .contenedor{
+                width:100%;
+                @include flexbox(row, flex-start, flex-start);
+                
+    
+                ul{
+                    display:none;
+                }
+            }
+    
+            .contenedorVertical{
+        
+                .presentacion{
+                    height: $altoMobile;
+    
+                    .opacidad{
+                        height: $altoMobile;
+                    }
+    
+                    .texto{
+                        height: $altoMobile;
+        
+                        h1{
+                            font-size: 22px;
+                        }
+                    }
+                }
+    
+                .contenedorPeliculas{
+                    padding: 10px;
+    
+                    nav{
+                        padding:20px 10px;
+    
+                        h2{
+                            font-size:16px;
+                        }
+                    }
+    
+                    ul{
+                        .pelis{
+                            width: 50%;
+                            height: 100%;
+        
+                            .tituloPeli{
+                                width: 100%;
+                                font-size:12px;
+                                text-align: left;
+                            }
+                        }
+                    }
+                }
+            }
+        }  
+    }
+}

@@ -237,3 +237,96 @@ body .contenedorGeneral .contenedorVertical .contenedorPeliculas ul .pelis .titu
   margin-top: 15px;
   text-transform: capitalize;
 }
+
+@media screen and (max-width: 768px) {
+  /* line 234, ../sass/style.scss */
+  body .contenedorGeneral nav {
+    height: 50px;
+  }
+  /* line 237, ../sass/style.scss */
+  body .contenedorGeneral nav #logo {
+    width: 55px;
+    height: 50px;
+  }
+  /* line 241, ../sass/style.scss */
+  body .contenedorGeneral nav #logo #capa_1 {
+    width: 35px;
+    height: 31px;
+  }
+  /* line 247, ../sass/style.scss */
+  body .contenedorGeneral nav .buscador {
+    width: 75%;
+    height: 50px;
+    margin-right: 4%;
+  }
+  /* line 252, ../sass/style.scss */
+  body .contenedorGeneral nav .buscador svg {
+    width: 14px;
+    height: 14px;
+  }
+  /* line 257, ../sass/style.scss */
+  body .contenedorGeneral nav .buscador input {
+    width: 70%;
+    font-weight: 300;
+    font-size: 16px;
+    border: none;
+    box-sizing: border-box;
+    margin-left: 15px;
+  }
+  /* line 267, ../sass/style.scss */
+  body .contenedorGeneral nav #hamburguesa {
+    display: inline;
+    margin-right: 2%;
+  }
+  /* line 273, ../sass/style.scss */
+  body .contenedorGeneral .contenedor {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  /* line 278, ../sass/style.scss */
+  body .contenedorGeneral .contenedor ul {
+    display: none;
+  }
+  /* line 285, ../sass/style.scss */
+  body .contenedorGeneral .contenedorVertical .presentacion {
+    height: 200px;
+  }
+  /* line 288, ../sass/style.scss */
+  body .contenedorGeneral .contenedorVertical .presentacion .opacidad {
+    height: 200px;
+  }
+  /* line 292, ../sass/style.scss */
+  body .contenedorGeneral .contenedorVertical .presentacion .texto {
+    height: 200px;
+  }
+  /* line 295, ../sass/style.scss */
+  body .contenedorGeneral .contenedorVertical .presentacion .texto h1 {
+    font-size: 22px;
+  }
+  /* line 301, ../sass/style.scss */
+  body .contenedorGeneral .contenedorVertical .contenedorPeliculas {
+    padding: 10px;
+  }
+  /* line 304, ../sass/style.scss */
+  body .contenedorGeneral .contenedorVertical .contenedorPeliculas nav {
+    padding: 20px 10px;
+  }
+  /* line 307, ../sass/style.scss */
+  body .contenedorGeneral .contenedorVertical .contenedorPeliculas nav h2 {
+    font-size: 16px;
+  }
+  /* line 313, ../sass/style.scss */
+  body .contenedorGeneral .contenedorVertical .contenedorPeliculas ul .pelis {
+    width: 50%;
+    height: 100%;
+  }
+  /* line 317, ../sass/style.scss */
+  body .contenedorGeneral .contenedorVertical .contenedorPeliculas ul .pelis .tituloPeli {
+    width: 100%;
+    font-size: 12px;
+    text-align: left;
+  }
+}
