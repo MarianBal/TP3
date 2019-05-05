@@ -25,7 +25,7 @@ body .contenedorGeneral nav {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 3;
 }
 /* line 34, ../sass/style.scss */
 body .contenedorGeneral nav #logo {
@@ -329,4 +329,8 @@ body .contenedorGeneral .contenedorVertical .contenedorPeliculas ul .pelis .titu
     font-size: 12px;
     text-align: left;
   }
+}
+/* line 330, ../sass/style.scss */
+.noVisible {
+  display: none !important;
 }
