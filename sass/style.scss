@@ -17,44 +17,22 @@ body{
 
     .contenedorGeneral{
         width: 100%;
-        height: 100%;
         font-family: $fuente;
         color: $color-tipo;
-        @include flexbox(row, flex-start, flex-start);
-        
-        ul{
-            height: 100vh;
-            list-style:none;
-            @include flexbox(column, flex-start,center);
+        @include flexbox(column, flex-start, flex-start);
+
+        nav{
+            width:100%;
+            height: 75px;
             background-color: $fondo;
-            margin: 0;
-            padding:0;
+            @include flexbox (row, space-between, center);
             position: -webkit-sticky;
             position: sticky;
             top: 0;
-           
-            li{
-                width: 95px;
-                height: 95px;
-                background-color: $fondo;
-                font-size: 9px;
-                text-transform: uppercase;
-                text-align: center;
-                @include flexbox(column, center, center);
-
-                svg{
-                    width: 20px;
-                    height: 20px;
-                    color: $fondo;  
-                    margin-bottom: 5px;
-                }
-
-                p{
-                    margin:0;
-                }
-            }
-
+            z-index:2;
+            
             #logo{
+                width:95px;
                 height: 75px;
                 background-color: $logo;
                 @include flexbox(row, center, center);
@@ -64,42 +42,88 @@ body{
                     height: 40px;
                     margin:0;
                 }
-            }       
-        } 
+            } 
 
-        .nav{
-            width:100%;
-            height: 75px;
-            background-color:$fondo;
-            @include borderBox();
-            padding-left: 40px;
-            @include flexbox(row, flex-start, center);
-            position: -webkit-sticky;
-            position: sticky;
-            top: 0;
-            z-index:1;
+            .buscador{
+                width:85%;
+                height: 75px;
+                background-color:$fondo;
+                @include borderBox();
+                @include flexbox(row, flex-start, center);
+                margin-right: 4%;
+    
+                svg{
+                    width: 18px;
+                    height: 18px;
+                    color:$color-tipo;
+                }
+    
+                input{
+                    width: 80%;
+                    font-weight: 300;
+                    font-size: 16px;
+                    border:none;
+                    @include borderBox();
+                    margin-left: 15px;
+                }
 
-            svg{
-                width: 18px;
-                height: 18px;
-                color:$color-tipo;
             }
 
-            input{
-                width: 70%;
-                font-weight: 300;
-                font-size: 16px;
-                border:none;
-                @include borderBox();
-                margin-left: 15px;
+            #hamburguesa{
+                width: 20px;
+                height: 20px;
+                color:$color-tipo;
+                margin-right: 2%;
+                display:none;
             }
         }
-        
+
+        .contenedor{
+            width:100%;
+            @include flexbox(row, flex-start, flex-start);
+            
+
+            ul{
+                list-style:none;
+                @include flexbox(column, flex-start,center);
+                background-color:$fondo;
+                margin: 0;
+                padding:0;
+                position: -webkit-sticky;
+                position: sticky;
+                top:75px;
+            
+
+               
+                li{
+                    width: 95px;
+                    height: 95px;
+                    background-color:$fondo;
+                    font-size: 9px;
+                    text-transform: uppercase;
+                    text-align: center;
+                    @include flexbox(column, center, center);
+    
+                    svg{
+                        width: 20px;
+                        height: 20px;
+                        color: $fondo;  
+                        margin-bottom: 5px;
+                    }
+    
+                    p{
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+
         .contenedorVertical{
             width:100%;
             margin:0;
             padding:0;
             @include flexbox(column, flex-start, center);
+        
 
             .presentacion{
                 width: 100%;
@@ -142,11 +166,13 @@ body{
                 width: 100%; 
                 @include borderBox();
                 padding: 25px;
+                background-color: $contenedor;
 
                 nav{
                     width:100%;
                     padding:23px 15px;
                     @include borderBox();
+                    background-color: $contenedor;
                     @include flexbox(row, space-between, center);
 
                     h2{
@@ -172,6 +198,7 @@ body{
                     .pelis{
                         width: 20%;
                         padding: 30px;
+                        background-color: $contenedor;
                         @include borderBox();
                         @include flexbox(column, space-between, center);
 
@@ -195,21 +222,7 @@ body{
             }
         }
     }
-}
-
-@media screen and (max-width: 768px){
-
-    .contenedorGeneral{
-        ul{
-            height: auto;
-
-            .otrosLi{
-                display:none;
-            }
-        }
-    }
-
-
+   
 }
         
    
