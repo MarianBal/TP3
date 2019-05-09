@@ -29,7 +29,7 @@ body{
             position: -webkit-sticky;
             position: sticky;
             top: 0;
-            z-index:3;
+            z-index:1;
             
             #logo{
                 width:95px;
@@ -95,8 +95,9 @@ body{
             
 
                
-                li{
+                .categorias{
                     width: 95px;
+                    height: 95px;
                     background-color:$fondo;
                     font-size: 9px;
                     text-transform: uppercase;

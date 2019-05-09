@@ -25,7 +25,7 @@ body .contenedorGeneral nav {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 3;
+  z-index: 1;
 }
 /* line 34, ../sass/style.scss */
 body .contenedorGeneral nav #logo {
@@ -101,8 +101,9 @@ body .contenedorGeneral .contenedor ul {
   top: 75px;
 }
 /* line 98, ../sass/style.scss */
-body .contenedorGeneral .contenedor ul li {
+body .contenedorGeneral .contenedor ul .categorias {
   width: 95px;
+  height: 95px;
   background-color: white;
   font-size: 9px;
   text-transform: uppercase;
@@ -112,18 +113,18 @@ body .contenedorGeneral .contenedor ul li {
   justify-content: center;
   align-items: center;
 }
-/* line 106, ../sass/style.scss */
-body .contenedorGeneral .contenedor ul li svg {
+/* line 107, ../sass/style.scss */
+body .contenedorGeneral .contenedor ul .categorias svg {
   width: 20px;
   height: 20px;
   color: white;
   margin-bottom: 5px;
 }
-/* line 113, ../sass/style.scss */
-body .contenedorGeneral .contenedor ul li p {
+/* line 114, ../sass/style.scss */
+body .contenedorGeneral .contenedor ul .categorias p {
   margin-bottom: 10px;
 }
-/* line 120, ../sass/style.scss */
+/* line 121, ../sass/style.scss */
 body .contenedorGeneral .contenedorVertical {
   width: 100%;
   margin: 0;
@@ -133,7 +134,7 @@ body .contenedorGeneral .contenedorVertical {
   justify-content: flex-start;
   align-items: center;
 }
-/* line 127, ../sass/style.scss */
+/* line 128, ../sass/style.scss */
 body .contenedorGeneral .contenedorVertical .presentacion {
   width: 100%;
   height: 384px;
@@ -144,7 +145,7 @@ body .contenedorGeneral .contenedorVertical .presentacion {
   display: block;
   position: relative;
 }
-/* line 137, ../sass/style.scss */
+/* line 138, ../sass/style.scss */
 body .contenedorGeneral .contenedorVertical .presentacion .opacidad {
   width: 100%;
   height: 384px;
@@ -154,7 +155,7 @@ body .contenedorGeneral .contenedorVertical .presentacion .opacidad {
   opacity: 0.7;
   margin: 0;
 }
-/* line 147, ../sass/style.scss */
+/* line 148, ../sass/style.scss */
 body .contenedorGeneral .contenedorVertical .presentacion .texto {
   width: 100%;
   height: 384px;
@@ -164,7 +165,7 @@ body .contenedorGeneral .contenedorVertical .presentacion .texto {
   justify-content: center;
   align-items: center;
 }
-/* line 154, ../sass/style.scss */
+/* line 155, ../sass/style.scss */
 body .contenedorGeneral .contenedorVertical .presentacion .texto h1 {
   font-size: 28px;
   font-weight: 500;
@@ -172,14 +173,14 @@ body .contenedorGeneral .contenedorVertical .presentacion .texto h1 {
   text-transform: uppercase;
   color: #081c24;
 }
-/* line 164, ../sass/style.scss */
+/* line 165, ../sass/style.scss */
 body .contenedorGeneral .contenedorVertical .contenedorPeliculas {
   width: 100%;
   box-sizing: border-box;
   padding: 25px;
   background-color: #f8f8f8;
 }
-/* line 170, ../sass/style.scss */
+/* line 171, ../sass/style.scss */
 body .contenedorGeneral .contenedorVertical .contenedorPeliculas nav {
   width: 100%;
   padding: 23px 15px;
@@ -190,20 +191,20 @@ body .contenedorGeneral .contenedorVertical .contenedorPeliculas nav {
   justify-content: space-between;
   align-items: center;
 }
-/* line 177, ../sass/style.scss */
+/* line 178, ../sass/style.scss */
 body .contenedorGeneral .contenedorVertical .contenedorPeliculas nav h2 {
   font-size: 18px;
   font-weight: 300;
   color: #081c24;
   margin: 0;
 }
-/* line 184, ../sass/style.scss */
+/* line 185, ../sass/style.scss */
 body .contenedorGeneral .contenedorVertical .contenedorPeliculas nav h3 {
   font-size: 12px;
   font-weight: 300;
   margin: 0;
 }
-/* line 191, ../sass/style.scss */
+/* line 192, ../sass/style.scss */
 body .contenedorGeneral .contenedorVertical .contenedorPeliculas ul {
   width: 100%;
   display: flex;
@@ -213,7 +214,7 @@ body .contenedorGeneral .contenedorVertical .contenedorPeliculas ul {
   flex-wrap: wrap;
   background-color: #f8f8f8;
 }
-/* line 197, ../sass/style.scss */
+/* line 198, ../sass/style.scss */
 body .contenedorGeneral .contenedorVertical .contenedorPeliculas ul .pelis {
   width: 20%;
   padding: 30px;
@@ -224,12 +225,12 @@ body .contenedorGeneral .contenedorVertical .contenedorPeliculas ul .pelis {
   justify-content: space-between;
   align-items: center;
 }
-/* line 207, ../sass/style.scss */
+/* line 208, ../sass/style.scss */
 body .contenedorGeneral .contenedorVertical .contenedorPeliculas ul .pelis .imagen img {
   width: 100%;
   height: auto;
 }
-/* line 213, ../sass/style.scss */
+/* line 214, ../sass/style.scss */
 body .contenedorGeneral .contenedorVertical .contenedorPeliculas ul .pelis .tituloPeli {
   font-size: 14px;
   color: #838D91;
@@ -238,32 +239,32 @@ body .contenedorGeneral .contenedorVertical .contenedorPeliculas ul .pelis .titu
 }
 
 @media screen and (max-width: 768px) {
-  /* line 233, ../sass/style.scss */
+  /* line 234, ../sass/style.scss */
   body .contenedorGeneral nav {
     height: 50px;
   }
-  /* line 236, ../sass/style.scss */
+  /* line 237, ../sass/style.scss */
   body .contenedorGeneral nav #logo {
     width: 55px;
     height: 50px;
   }
-  /* line 240, ../sass/style.scss */
+  /* line 241, ../sass/style.scss */
   body .contenedorGeneral nav #logo #capa_1 {
     width: 35px;
     height: 31px;
   }
-  /* line 246, ../sass/style.scss */
+  /* line 247, ../sass/style.scss */
   body .contenedorGeneral nav .buscador {
     width: 75%;
     height: 50px;
     margin-right: 4%;
   }
-  /* line 251, ../sass/style.scss */
+  /* line 252, ../sass/style.scss */
   body .contenedorGeneral nav .buscador svg {
     width: 14px;
     height: 14px;
   }
-  /* line 256, ../sass/style.scss */
+  /* line 257, ../sass/style.scss */
   body .contenedorGeneral nav .buscador input {
     width: 70%;
     font-weight: 300;
@@ -272,12 +273,12 @@ body .contenedorGeneral .contenedorVertical .contenedorPeliculas ul .pelis .titu
     box-sizing: border-box;
     margin-left: 15px;
   }
-  /* line 266, ../sass/style.scss */
+  /* line 267, ../sass/style.scss */
   body .contenedorGeneral nav #hamburguesa {
     display: inline;
     margin-right: 2%;
   }
-  /* line 272, ../sass/style.scss */
+  /* line 273, ../sass/style.scss */
   body .contenedorGeneral .contenedor {
     width: 100%;
     display: flex;
@@ -285,51 +286,51 @@ body .contenedorGeneral .contenedorVertical .contenedorPeliculas ul .pelis .titu
     justify-content: flex-start;
     align-items: flex-start;
   }
-  /* line 277, ../sass/style.scss */
+  /* line 278, ../sass/style.scss */
   body .contenedorGeneral .contenedor ul {
     display: none;
   }
-  /* line 284, ../sass/style.scss */
+  /* line 285, ../sass/style.scss */
   body .contenedorGeneral .contenedorVertical .presentacion {
     height: 200px;
   }
-  /* line 287, ../sass/style.scss */
+  /* line 288, ../sass/style.scss */
   body .contenedorGeneral .contenedorVertical .presentacion .opacidad {
     height: 200px;
   }
-  /* line 291, ../sass/style.scss */
+  /* line 292, ../sass/style.scss */
   body .contenedorGeneral .contenedorVertical .presentacion .texto {
     height: 200px;
   }
-  /* line 294, ../sass/style.scss */
+  /* line 295, ../sass/style.scss */
   body .contenedorGeneral .contenedorVertical .presentacion .texto h1 {
     font-size: 22px;
   }
-  /* line 300, ../sass/style.scss */
+  /* line 301, ../sass/style.scss */
   body .contenedorGeneral .contenedorVertical .contenedorPeliculas {
     padding: 10px;
   }
-  /* line 303, ../sass/style.scss */
+  /* line 304, ../sass/style.scss */
   body .contenedorGeneral .contenedorVertical .contenedorPeliculas nav {
     padding: 20px 10px;
   }
-  /* line 306, ../sass/style.scss */
+  /* line 307, ../sass/style.scss */
   body .contenedorGeneral .contenedorVertical .contenedorPeliculas nav h2 {
     font-size: 16px;
   }
-  /* line 312, ../sass/style.scss */
+  /* line 313, ../sass/style.scss */
   body .contenedorGeneral .contenedorVertical .contenedorPeliculas ul .pelis {
     width: 50%;
     height: 100%;
   }
-  /* line 316, ../sass/style.scss */
+  /* line 317, ../sass/style.scss */
   body .contenedorGeneral .contenedorVertical .contenedorPeliculas ul .pelis .tituloPeli {
     width: 100%;
     font-size: 12px;
     text-align: left;
   }
 }
-/* line 329, ../sass/style.scss */
+/* line 330, ../sass/style.scss */
 .noVisible {
   display: none !important;
 }
