@@ -73,6 +73,15 @@ fetch (upcoming)
 
     })
 
+    const popularBoton = getElementsByClassName('categorias')[0];
+    const topRatedBoton = getElementsByClassName('categorias')[1];
+    const upcomingBoton = getElementsByClassName('categorias')[2];
+    const nowPlayingBoton = getElementsByClassName('categorias')[3];
+
+
+
+
+
 
 
 
