@@ -329,8 +329,12 @@ body .contenedorGeneral .contenedorVertical .contenedorPeliculas ul .pelis .titu
     font-size: 12px;
     text-align: left;
   }
+  /* line 324, ../sass/style.scss */
+  body .contenedorGeneral .contenedorVertical .contenedorPeliculas ul .quinta {
+    display: none;
+  }
 }
-/* line 330, ../sass/style.scss */
+/* line 334, ../sass/style.scss */
 .noVisible {
   display: none !important;
 }
