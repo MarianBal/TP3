@@ -1,12 +1,26 @@
 console.log('Hola Mundo')
 
+//selección
 const hamb = document.getElementById('hamburguesa')
-const contenedor = document.getElementsByClassName("contenedor")[0]
+const contenedor = document.querySelector(".contenedor")
 
+//ocultar Home
+const pres = document.querySelector(".presentacion");
+const noPres= () => pres.classList.add('noVisible');
+
+const home = document.getElementsByClassName('home');
+
+const borrarHome= () => [...home].map(e=>{
+e.classList.add('noVisible')
+
+})
+
+
+//ocultar botonera con hamburguesa
 const noContenedor = () => contenedor.classList.add('noVisible');
-
 const pelis = document.getElementsByClassName('pelis')
 
+//Home
 const apiKey= `8bdfee1cadeaa7c6f8c489f17f927c3d`;
 let paginaActual = 1;
 const popular =`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&page=${paginaActual}`
@@ -18,20 +32,17 @@ const dire = `https://image.tmdb.org/t/p/w370_and_h556_bestv2`
 
 let j=0;
 
-fetch (popular)
+fetch (`${popular}&page=${paginaActual}`)
     .then(res => res.json())
     .then(movie => {
 
         for (let i=0; i<5; i++){
-
-            console.log(movie.results[i])
             
             pelis[j].innerHTML = `<div class="imagen"><img src="${dire}${movie.results[i].poster_path}"/></div>
                                   <div class="tituloPeli">${movie.results[i].title}</div>`
 
             j++
         }
-
     })
 
 fetch (topRated)
@@ -40,17 +51,12 @@ fetch (topRated)
 
 
         for (let i=0; i<5; i++){
-
-            console.log(movie.results[i])
             
             pelis[j].innerHTML = `<div class="imagen"><img src="${dire}${movie.results[i].poster_path}"/></div>
                                   <div class="tituloPeli">${movie.results[i].title}</div>`
 
             j++
-        }
-
-    
-
+        } 
     })
 
 fetch (upcoming)
@@ -58,15 +64,12 @@ fetch (upcoming)
     .then(movie => {
 
         for (let i=0; i<5; i++){
-
-            console.log(movie.results[i])
             
             pelis[j].innerHTML = `<div class="imagen"><img src="${dire}${movie.results[i].poster_path}"/></div>
                                   <div class="tituloPeli">${movie.results[i].title}</div>`
             
             j++
         }
-
     })
 
     fetch (nowPlaying)
@@ -74,21 +77,40 @@ fetch (upcoming)
     .then(movie => {
 
         for (let i=0; i<5; i++){
-
-            console.log(movie.results[i])
             
             pelis[j].innerHTML = `<div class="imagen"><img src="${dire}${movie.results[i].poster_path}"/></div>
                                   <div class="tituloPeli">${movie.results[i].title}</div>`
 
             j++
         }
-
     })
 
-    const popularBoton = getElementsByClassName('categorias')[0];
-    const topRatedBoton = getElementsByClassName('categorias')[1];
-    const upcomingBoton = getElementsByClassName('categorias')[2];
-    const nowPlayingBoton = getElementsByClassName('categorias')[3];
+const popularBoton =document.getElementsByClassName('categorias')[0];
+const topRatedBoton = document.getElementsByClassName('categorias')[1];
+const upcomingBoton = document.getElementsByClassName('categorias')[2];
+const nowPlayingBoton = document.getElementsByClassName('categorias')[3];
+
+//popular
+
+const contenedorPop = document.getElementById('contenedorPop');
+const siContenedorPop= () =>contenedorPop.classList.remove('noVisible')
+
+const pop = () =>{ 
+
+    noPres();
+    borrarHome();
+    siContenedorPop(); 
+    
+    fetch (`${popular}&page=${paginaActual}`)
+    .then(res => res.json())
+    .then(movie => {
+
+        console.log(movie)
+    })
+
+}
+;
+
 
 
 
