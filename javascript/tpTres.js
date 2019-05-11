@@ -4,18 +4,6 @@ console.log('Hola Mundo')
 const hamb = document.getElementById('hamburguesa')
 const contenedor = document.querySelector(".contenedor")
 
-//ocultar Home
-const pres = document.querySelector(".presentacion");
-const noPres= () => pres.classList.add('noVisible');
-
-const home = document.getElementsByClassName('home');
-
-const borrarHome= () => [...home].map(e=>{
-e.classList.add('noVisible')
-
-})
-
-
 //ocultar botonera con hamburguesa
 const noContenedor = () => contenedor.classList.add('noVisible');
 const pelis = document.getElementsByClassName('pelis')
@@ -91,25 +79,132 @@ const upcomingBoton = document.getElementsByClassName('categorias')[2];
 const nowPlayingBoton = document.getElementsByClassName('categorias')[3];
 
 //popular
-
-const contenedorPop = document.getElementById('contenedorPop');
-const siContenedorPop= () =>contenedorPop.classList.remove('noVisible')
-
 const pop = () =>{ 
+    const pres = document.querySelector(".presentacion");
+    const noPres= () => pres.classList.add('noVisible');
+
+    const home = document.getElementsByClassName('home');
+    const borrarHome= () => [...home].map(e=>e.classList.add('noVisible'))
+
+    const contenedorPop = document.getElementById('contenedorPop');
+    const siContenedorPop= () =>contenedorPop.classList.remove('noVisible')
 
     noPres();
     borrarHome();
-    siContenedorPop(); 
-    
+    siContenedorPop();
+
     fetch (`${popular}&page=${paginaActual}`)
     .then(res => res.json())
     .then(movie => {
 
-        console.log(movie)
+        const movies = movie.results;
+        const ul = document.querySelector(".verPelis")
+    
+        ul.innerHTML = movies.map(e=>{
+            return `<li class="pelis">
+            <div class="imagen"><img src="${dire}${e.poster_path}"/></div>
+            <div class="tituloPeli">${e.title}</div>
+            </li>`
+    }).join('');
+    
     })
-
 }
-;
+
+//Top Rated
+const topR = () =>{ 
+    const pres = document.querySelector(".presentacion");
+    const noPres= () => pres.classList.add('noVisible');
+
+    const home = document.getElementsByClassName('home');
+    const borrarHome= () => [...home].map(e=>e.classList.add('noVisible'))
+
+    const contenedorPop = document.getElementById('contenedorPop');
+    const siContenedorPop= () =>contenedorPop.classList.remove('noVisible')
+
+    noPres();
+    borrarHome();
+    siContenedorPop();
+
+    fetch (`${topRated}&page=${paginaActual}`)
+    .then(res => res.json())
+    .then(movie => {
+
+        const movies = movie.results;
+        const ul = document.querySelector(".verPelis")
+    
+        ul.innerHTML = movies.map(e=>{
+            return `<li class="pelis">
+            <div class="imagen"><img src="${dire}${e.poster_path}"/></div>
+            <div class="tituloPeli">${e.title}</div>
+            </li>`
+    }).join('');
+    
+    })
+}
+
+//Upcoming
+const upcom = () =>{ 
+    const pres = document.querySelector(".presentacion");
+    const noPres= () => pres.classList.add('noVisible');
+
+    const home = document.getElementsByClassName('home');
+    const borrarHome= () => [...home].map(e=>e.classList.add('noVisible'))
+
+    const contenedorPop = document.getElementById('contenedorPop');
+    const siContenedorPop= () =>contenedorPop.classList.remove('noVisible')
+
+    noPres();
+    borrarHome();
+    siContenedorPop();
+
+    fetch (`${upcoming}&page=${paginaActual}`)
+    .then(res => res.json())
+    .then(movie => {
+
+        const movies = movie.results;
+        const ul = document.querySelector(".verPelis")
+    
+        ul.innerHTML = movies.map(e=>{
+            return `<li class="pelis">
+            <div class="imagen"><img src="${dire}${e.poster_path}"/></div>
+            <div class="tituloPeli">${e.title}</div>
+            </li>`
+    }).join('');
+    
+    })
+}
+
+//now playing
+const nowp = () =>{ 
+    const pres = document.querySelector(".presentacion");
+    const noPres= () => pres.classList.add('noVisible');
+
+    const home = document.getElementsByClassName('home');
+    const borrarHome= () => [...home].map(e=>e.classList.add('noVisible'))
+
+    const contenedorPop = document.getElementById('contenedorPop');
+    const siContenedorPop= () =>contenedorPop.classList.remove('noVisible')
+
+    noPres();
+    borrarHome();
+    siContenedorPop();
+
+    fetch (`${nowPlaying}&page=${paginaActual}`)
+    .then(res => res.json())
+    .then(movie => {
+
+        const movies = movie.results;
+        const ul = document.querySelector(".verPelis")
+    
+        ul.innerHTML = movies.map(e=>{
+            return `<li class="pelis">
+            <div class="imagen"><img src="${dire}${e.poster_path}"/></div>
+            <div class="tituloPeli">${e.title}</div>
+            </li>`
+    }).join('');
+    
+    })
+}
 
 
 
