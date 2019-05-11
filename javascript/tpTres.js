@@ -16,6 +16,7 @@ const nowPlaying =`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiK
 
 const dire = `https://image.tmdb.org/t/p/w370_and_h556_bestv2`
 
+let j=0;
 
 fetch (popular)
     .then(res => res.json())
@@ -25,8 +26,10 @@ fetch (popular)
 
             console.log(movie.results[i])
             
-            pelis[i].innerHTML = `<div class="imagen"><img src="${dire}${movie.results[i].poster_path}"/></div>
+            pelis[j].innerHTML = `<div class="imagen"><img src="${dire}${movie.results[i].poster_path}"/></div>
                                   <div class="tituloPeli">${movie.results[i].title}</div>`
+
+            j++
         }
 
     })
@@ -35,13 +38,18 @@ fetch (topRated)
     .then(res => res.json())
     .then(movie => {
 
-        for (let i=5; i<10; i++){
+
+        for (let i=0; i<5; i++){
 
             console.log(movie.results[i])
             
-            pelis[i].innerHTML = `<div class="imagen"><img src="${dire}${movie.results[i].poster_path}"/></div>
+            pelis[j].innerHTML = `<div class="imagen"><img src="${dire}${movie.results[i].poster_path}"/></div>
                                   <div class="tituloPeli">${movie.results[i].title}</div>`
+
+            j++
         }
+
+    
 
     })
 
@@ -49,12 +57,14 @@ fetch (upcoming)
     .then(res => res.json())
     .then(movie => {
 
-        for (let i=10; i<15; i++){
+        for (let i=0; i<5; i++){
 
             console.log(movie.results[i])
             
-            pelis[i].innerHTML = `<div class="imagen"><img src="${dire}${movie.results[i].poster_path}"/></div>
+            pelis[j].innerHTML = `<div class="imagen"><img src="${dire}${movie.results[i].poster_path}"/></div>
                                   <div class="tituloPeli">${movie.results[i].title}</div>`
+            
+            j++
         }
 
     })
@@ -63,12 +73,14 @@ fetch (upcoming)
     .then(res => res.json())
     .then(movie => {
 
-        for (let i=15; i<20; i++){
+        for (let i=0; i<5; i++){
 
             console.log(movie.results[i])
             
-            pelis[i].innerHTML = `<div class="imagen"><img src="${dire}${movie.results[i].poster_path}"/></div>
+            pelis[j].innerHTML = `<div class="imagen"><img src="${dire}${movie.results[i].poster_path}"/></div>
                                   <div class="tituloPeli">${movie.results[i].title}</div>`
+
+            j++
         }
 
     })
