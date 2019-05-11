@@ -1,0 +1,183 @@
+/* line 17, ../sass/style dos.scss */
+body {
+  background-color: #f8f8f8;
+  margin: 0;
+}
+/* line 21, ../sass/style dos.scss */
+body .contenedorGeneral {
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  color: #838D91;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+/* line 27, ../sass/style dos.scss */
+body .contenedorGeneral .sticky {
+  display: fixed;
+  top: 0;
+}
+/* line 31, ../sass/style dos.scss */
+body .contenedorGeneral .sticky nav {
+  width: 100%;
+  height: 75px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+/* line 38, ../sass/style dos.scss */
+body .contenedorGeneral .sticky nav #logo {
+  width: 95px;
+  height: 75px;
+  background-color: #bc3b69;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+/* line 44, ../sass/style dos.scss */
+body .contenedorGeneral .sticky nav #logo #capa_1 {
+  width: 45px;
+  height: 40px;
+  margin: 0;
+}
+/* line 51, ../sass/style dos.scss */
+body .contenedorGeneral .sticky nav .buscador {
+  width: 85%;
+  height: 75px;
+  background-color: white;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 4%;
+}
+/* line 59, ../sass/style dos.scss */
+body .contenedorGeneral .sticky nav .buscador svg {
+  width: 18px;
+  height: 18px;
+  color: #838D91;
+}
+/* line 65, ../sass/style dos.scss */
+body .contenedorGeneral .sticky nav .buscador input {
+  width: 80%;
+  font-weight: 300;
+  font-size: 16px;
+  border: none;
+  box-sizing: border-box;
+  margin-left: 15px;
+}
+/* line 76, ../sass/style dos.scss */
+body .contenedorGeneral .sticky nav #hamburguesa {
+  width: 20px;
+  height: 20px;
+  color: #838D91;
+  margin-right: 2%;
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  /* line 239, ../sass/style dos.scss */
+  body .contenedorGeneral nav {
+    height: 50px;
+  }
+  /* line 242, ../sass/style dos.scss */
+  body .contenedorGeneral nav #logo {
+    width: 55px;
+    height: 50px;
+  }
+  /* line 246, ../sass/style dos.scss */
+  body .contenedorGeneral nav #logo #capa_1 {
+    width: 35px;
+    height: 31px;
+  }
+  /* line 252, ../sass/style dos.scss */
+  body .contenedorGeneral nav .buscador {
+    width: 75%;
+    height: 50px;
+    margin-right: 4%;
+  }
+  /* line 257, ../sass/style dos.scss */
+  body .contenedorGeneral nav .buscador svg {
+    width: 14px;
+    height: 14px;
+  }
+  /* line 262, ../sass/style dos.scss */
+  body .contenedorGeneral nav .buscador input {
+    width: 70%;
+    font-weight: 300;
+    font-size: 16px;
+    border: none;
+    box-sizing: border-box;
+    margin-left: 15px;
+  }
+  /* line 272, ../sass/style dos.scss */
+  body .contenedorGeneral nav #hamburguesa {
+    display: inline;
+    margin-right: 2%;
+  }
+  /* line 278, ../sass/style dos.scss */
+  body .contenedorGeneral .contenedor {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  /* line 283, ../sass/style dos.scss */
+  body .contenedorGeneral .contenedor ul {
+    display: none;
+  }
+  /* line 290, ../sass/style dos.scss */
+  body .contenedorGeneral .contenedorVertical .presentacion {
+    height: 200px;
+  }
+  /* line 293, ../sass/style dos.scss */
+  body .contenedorGeneral .contenedorVertical .presentacion .opacidad {
+    height: 200px;
+  }
+  /* line 297, ../sass/style dos.scss */
+  body .contenedorGeneral .contenedorVertical .presentacion .texto {
+    height: 200px;
+  }
+  /* line 300, ../sass/style dos.scss */
+  body .contenedorGeneral .contenedorVertical .presentacion .texto h1 {
+    font-size: 22px;
+  }
+  /* line 306, ../sass/style dos.scss */
+  body .contenedorGeneral .contenedorVertical .contenedorPeliculas {
+    padding: 10px;
+  }
+  /* line 309, ../sass/style dos.scss */
+  body .contenedorGeneral .contenedorVertical .contenedorPeliculas nav {
+    padding: 20px 10px;
+  }
+  /* line 312, ../sass/style dos.scss */
+  body .contenedorGeneral .contenedorVertical .contenedorPeliculas nav h2 {
+    font-size: 16px;
+  }
+  /* line 318, ../sass/style dos.scss */
+  body .contenedorGeneral .contenedorVertical .contenedorPeliculas ul .pelis {
+    width: 50%;
+    height: 100%;
+  }
+  /* line 322, ../sass/style dos.scss */
+  body .contenedorGeneral .contenedorVertical .contenedorPeliculas ul .pelis .tituloPeli {
+    width: 100%;
+    font-size: 12px;
+    text-align: left;
+  }
+  /* line 329, ../sass/style dos.scss */
+  body .contenedorGeneral .contenedorVertical .contenedorPeliculas ul .quinta {
+    display: none;
+  }
+}
+/* line 339, ../sass/style dos.scss */
+.noVisible {
+  display: none !important;
+}

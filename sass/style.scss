@@ -12,23 +12,23 @@
 }
 
 body{
-    background-color:$contenedor;
+    background-color:$fondo;
     margin: 0; 
+    font-family: $fuente;
+    color: $color-tipo;
 
-    .contenedorGeneral{
-        width: 100%;
-        font-family: $fuente;
-        color: $color-tipo;
-        @include flexbox(column, flex-start, flex-start);
+    .sticky{
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        top: 0;
+        z-index: 1;
 
         nav{
             width:100%;
             height: 75px;
             background-color: $fondo;
+            
             @include flexbox (row, space-between, center);
-            position: -webkit-sticky;
-            position: sticky;
-            top: 0;
             z-index:1;
             
             #logo{
@@ -77,258 +77,253 @@ body{
                 display:none;
             }
         }
+    }
 
-        .contenedor{
-            width:100%;
-            @include flexbox(row, flex-start, flex-start);
-            
+    .contenedor{
+        width:100%;
+        @include flexbox(row, flex-start, flex-start);
+        
 
-            ul{
-                list-style:none;
-                @include flexbox(column, flex-start,center);
+        ul{
+            list-style:none;
+            @include flexbox(column, flex-start,center);
+            background-color:$fondo;
+            margin: 0;
+            padding:0;
+            position: -webkit-sticky;
+            position: sticky;
+            top:75px;
+        
+
+           
+            .categorias{
+                width: 95px;
+                height: 95px;
                 background-color:$fondo;
-                margin: 0;
-                padding:0;
-                position: -webkit-sticky;
-                position: sticky;
-                top:75px;
-            
+                font-size: 9px;
+                text-transform: uppercase;
+                text-align: center;
+                @include flexbox(column, center, center);
 
-               
-                .categorias{
-                    width: 95px;
-                    height: 95px;
-                    background-color:$fondo;
-                    font-size: 9px;
+                svg{
+                    width: 20px;
+                    height: 20px;
+                    color: $fondo;  
+                    margin-bottom: 5px;
+                }
+
+                p{
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+
+    .contenedorVertical{
+        width:100%;
+        margin:0;
+        padding:0;
+        @include flexbox(column, flex-start, center);
+    
+
+        .presentacion{
+            width: 100%;
+            height: $alto;
+            background: url("../img/batman.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50% 50%;
+            display:block;
+            position: relative;
+
+            .opacidad{
+                width:100%;
+                height: $alto;
+                @include borderBox();
+                position: absolute;
+                background:white;
+                opacity:0.7;
+                margin:0;
+            }
+
+            .texto{
+                width:100%;
+                height: $alto;
+                position: absolute;
+                @include flexbox(row, center, center);
+
+                
+                h1{
+                    font-size: 28px;
+                    font-weight: 500;
+                    margin:0;
                     text-transform: uppercase;
-                    text-align: center;
-                    @include flexbox(column, center, center);
-    
-                    svg{
-                        width: 20px;
-                        height: 20px;
-                        color: $fondo;  
-                        margin-bottom: 5px;
-                    }
-    
-                    p{
-                        margin-bottom: 10px;
-                    }
+                    color: $oscuro;
                 }
             }
         }
 
-        .contenedorVertical{
-            width:100%;
-            margin:0;
-            padding:0;
-            @include flexbox(column, flex-start, center);
-        
+        .contenedorPeliculas{
+            width: 100%; 
+            @include borderBox();
+            padding: 25px;
+            background-color: $contenedor;
 
-            .presentacion{
-                width: 100%;
-                height: $alto;
-                background: url("../img/batman.jpg");
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: 50% 50%;
-                display:block;
-                position: relative;
+            nav{
+                width:100%;
+                padding:23px 15px;
+                @include borderBox();
+                background-color: $contenedor;
+                @include flexbox(row, space-between, center);
 
-                .opacidad{
-                    width:100%;
-                    height: $alto;
-                    @include borderBox();
-                    position: absolute;
-                    background:white;
-                    opacity:0.7;
+                h2{
+                    font-size:18px;
+                    font-weight:300;
+                    color:$oscuro;
                     margin:0;
                 }
 
-                .texto{
-                    width:100%;
-                    height: $alto;
-                    position: absolute;
-                    @include flexbox(row, center, center);
-
-                    
-                    h1{
-                        font-size: 28px;
-                        font-weight: 500;
-                        margin:0;
-                        text-transform: uppercase;
-                        color: $oscuro;
-                    }
+                h3{
+                    font-size:12px;
+                    font-weight:300; 
+                    margin:0;
                 }
             }
 
-            .contenedorPeliculas{
-                width: 100%; 
-                @include borderBox();
-                padding: 25px;
-                background-color: $contenedor;
+            ul{
+                width:100%;
+                @include flexbox(row, flex-start, flex-start);
+                flex-wrap: wrap;
+                background-color:$contenedor;
 
-                nav{
-                    width:100%;
-                    padding:23px 15px;
-                    @include borderBox();
+                .pelis{
+                    width: 20%;
+                    padding: 30px;
                     background-color: $contenedor;
-                    @include flexbox(row, space-between, center);
+                    @include borderBox();
+                    @include flexbox(column, space-between, center);
 
-                    h2{
-                        font-size:18px;
-                        font-weight:300;
-                        color:$oscuro;
-                        margin:0;
+                    
+                    .imagen{
+
+                        img{
+                        width:100%;
+                        height:auto;
+                        }
                     }
 
-                    h3{
-                        font-size:12px;
-                        font-weight:300; 
-                        margin:0;
-                    }
-                }
-
-                ul{
-                    width:100%;
-                    @include flexbox(row, flex-start, flex-start);
-                    flex-wrap: wrap;
-                    background-color:$contenedor;
-
-                    .pelis{
-                        width: 20%;
-                        padding: 30px;
-                        background-color: $contenedor;
-                        @include borderBox();
-                        @include flexbox(column, space-between, center);
-
-                        
-                        .imagen{
-
-                            img{
-                            width:100%;
-                            height:auto;
-                            }
-                        }
-
-                        .tituloPeli{
-                            font-size:14px;
-                            color:$color-tipo;
-                            margin-top:15px;
-                            text-transform: capitalize;
-                        }
+                    .tituloPeli{
+                        font-size:14px;
+                        color:$color-tipo;
+                        margin-top:15px;
+                        text-transform: capitalize;
                     }
                 }
             }
         }
     }
-   
 }
-        
+
 @media screen and (max-width: 768px) {
 
     body{
 
-        .contenedorGeneral{
-    
-            nav{
-                height: 50px;
+        nav{
+            height: 50px;
                 
-                #logo{
-                    width:55px;
-                    height: 50px;
+            #logo{
+                width:55px;
+                height: 50px;
     
-                    #capa_1{
-                        width: 35px;
-                        height: 31px;
-                    }
-                } 
-    
-                .buscador{
-                    width: 75%;
-                    height: 50px;
-                    margin-right: 4%;
-        
-                    svg{
-                        width: 14px;
-                        height: 14px;
-                    }
-        
-                    input{
-                        width: 70%;
-                        font-weight: 300;
-                        font-size: 16px;
-                        border:none;
-                        @include borderBox();
-                        margin-left: 15px;
-                    }
+                #capa_1{
+                    width: 35px;
+                    height: 31px;
                 }
-    
-                #hamburguesa{
-                    display:inline;
-                    margin-right: 2%;
+            } 
+            
+            .buscador{
+                width: 75%;
+                height: 50px;
+                margin-right: 4%;
+        
+                svg{
+                    width: 14px;
+                    height: 14px;
+                }
+        
+                input{
+                    width: 70%;
+                    font-weight: 300;
+                    font-size: 16px;
+                    border:none;
+                    @include borderBox();
+                    margin-left: 15px;
                 }
             }
     
-            .contenedor{
-                width:100%;
-                @include flexbox(row, flex-start, flex-start);
-                
+            #hamburguesa{
+                display:inline;
+                margin-right: 2%;
+            }
+        }
+    
+        .contenedor{
+            width:100%;
+            @include flexbox(row, flex-start, flex-start);
+                    
+            ul{
+                display:none;
+            }
+        }
+    
+        .contenedorVertical{
+
+            .presentacion{
+                height: $altoMobile;
+
+                .opacidad{
+                    height: $altoMobile;
+                }
+    
+                .texto{
+                    height: $altoMobile;
+
+                    h1{
+                        font-size: 22px;
+                    }
+                }
+            }
+    
+            .contenedorPeliculas{
+                padding: 10px;
+
+                nav{
+                    padding:20px 10px;
+
+                    h2{
+                        font-size:16px;
+                    }
+                }
     
                 ul{
-                    display:none;
-                }
-            }
+                    .pelis{
+                        width: 50%;
+                        height: 100%;
     
-            .contenedorVertical{
-        
-                .presentacion{
-                    height: $altoMobile;
-    
-                    .opacidad{
-                        height: $altoMobile;
-                    }
-    
-                    .texto{
-                        height: $altoMobile;
-        
-                        h1{
-                            font-size: 22px;
+                        .tituloPeli{
+                            width: 100%;
+                            font-size:12px;
+                            text-align: left;
                         }
                     }
-                }
-    
-                .contenedorPeliculas{
-                    padding: 10px;
-    
-                    nav{
-                        padding:20px 10px;
-    
-                        h2{
-                            font-size:16px;
-                        }
-                    }
-    
-                    ul{
-                        .pelis{
-                            width: 50%;
-                            height: 100%;
-        
-                            .tituloPeli{
-                                width: 100%;
-                                font-size:12px;
-                                text-align: left;
-                            }
-                        }
 
-                        .quinta{
-                            display:none;
-                        }
+                    .quinta{
+                        display:none;
                     }
                 }
             }
-        }  
-    }
+        }
+    }  
 }
 
 .noVisible{
