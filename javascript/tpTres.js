@@ -1,14 +1,23 @@
 console.log('Hola Mundo')
 
-//selección
+//Hamburguesa
 const hamb = document.getElementById('hamburguesa')
 const contenedor = document.querySelector(".contenedor")
 
-//ocultar botonera con hamburguesa
+const menuH = document.getElementById('.menuH');
+const siMenu = () => menuH.classList.remove('noVisible')
+
 const noContenedor = () => contenedor.classList.add('noVisible');
 const pelis = document.getElementsByClassName('pelis')
 
-//Home
+//selecciones
+const pres = document.querySelector(".presentacion");
+const contenedorPop = document.getElementById('contenedorPop');
+const home = document.getElementsByClassName('home');
+const total = document.querySelector('.total');
+const titulo = document.querySelector(".titulo");
+
+//Api
 const apiKey= `8bdfee1cadeaa7c6f8c489f17f927c3d`;
 let paginaActual = 1;
 const popular =`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&page=${paginaActual}`
@@ -18,61 +27,74 @@ const nowPlaying =`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiK
 
 const dire = `https://image.tmdb.org/t/p/w370_and_h556_bestv2`
 
-let j=0;
+//Home
+const ada = () => {
 
-fetch (`${popular}&page=${paginaActual}`)
-    .then(res => res.json())
-    .then(movie => {
+    const noPop = () =>contenedorPop.classList.add('noVisible');
+    const siPres = () => pres.classList.remove('noVisible')
+    const siHome = () => [...home].map(e=>e.classList.remove('noVisible'))
 
-        for (let i=0; i<5; i++){
-            
-            pelis[j].innerHTML = `<div class="imagen"><img src="${dire}${movie.results[i].poster_path}"/></div>
-                                  <div class="tituloPeli">${movie.results[i].title}</div>`
+    noPop()
+    siPres()
+    siHome()
 
-            j++
-        }
-    })
+    let j=0;
 
-fetch (topRated)
-    .then(res => res.json())
-    .then(movie => {
+    fetch (`${popular}&page=${paginaActual}`)
+        .then(res => res.json())
+        .then(movie => {
+
+            for (let i=0; i<5; i++){
+                
+                pelis[j].innerHTML = `<div class="imagen"><img src="${dire}${movie.results[i].poster_path}"/></div>
+                                    <div class="tituloPeli">${movie.results[i].title}</div>`
+
+                j++
+            }
+        })
+
+    fetch (topRated)
+        .then(res => res.json())
+        .then(movie => {
 
 
-        for (let i=0; i<5; i++){
-            
-            pelis[j].innerHTML = `<div class="imagen"><img src="${dire}${movie.results[i].poster_path}"/></div>
-                                  <div class="tituloPeli">${movie.results[i].title}</div>`
+            for (let i=0; i<5; i++){
+                
+                pelis[j].innerHTML = `<div class="imagen"><img src="${dire}${movie.results[i].poster_path}"/></div>
+                                    <div class="tituloPeli">${movie.results[i].title}</div>`
 
-            j++
-        } 
-    })
+                j++
+            } 
+        })
 
-fetch (upcoming)
-    .then(res => res.json())
-    .then(movie => {
+    fetch (upcoming)
+        .then(res => res.json())
+        .then(movie => {
 
-        for (let i=0; i<5; i++){
-            
-            pelis[j].innerHTML = `<div class="imagen"><img src="${dire}${movie.results[i].poster_path}"/></div>
-                                  <div class="tituloPeli">${movie.results[i].title}</div>`
-            
-            j++
-        }
-    })
+            for (let i=0; i<5; i++){
+                
+                pelis[j].innerHTML = `<div class="imagen"><img src="${dire}${movie.results[i].poster_path}"/></div>
+                                    <div class="tituloPeli">${movie.results[i].title}</div>`
+                
+                j++
+            }
+        })
 
-    fetch (nowPlaying)
-    .then(res => res.json())
-    .then(movie => {
+        fetch (nowPlaying)
+        .then(res => res.json())
+        .then(movie => {
 
-        for (let i=0; i<5; i++){
-            
-            pelis[j].innerHTML = `<div class="imagen"><img src="${dire}${movie.results[i].poster_path}"/></div>
-                                  <div class="tituloPeli">${movie.results[i].title}</div>`
+            for (let i=0; i<5; i++){
+                
+                pelis[j].innerHTML = `<div class="imagen"><img src="${dire}${movie.results[i].poster_path}"/></div>
+                                    <div class="tituloPeli">${movie.results[i].title}</div>`
 
-            j++
-        }
-    })
+                j++
+            }
+        })
+}
 
+//Categorías
 const popularBoton =document.getElementsByClassName('categorias')[0];
 const topRatedBoton = document.getElementsByClassName('categorias')[1];
 const upcomingBoton = document.getElementsByClassName('categorias')[2];
@@ -80,14 +102,11 @@ const nowPlayingBoton = document.getElementsByClassName('categorias')[3];
 
 //popular
 const pop = () =>{ 
-    const pres = document.querySelector(".presentacion");
+
     const noPres= () => pres.classList.add('noVisible');
+    const borrarHome= () => [...home].map(e=>e.classList.add('noVisible'));
+    const siContenedorPop= () =>contenedorPop.classList.remove('noVisible');
 
-    const home = document.getElementsByClassName('home');
-    const borrarHome= () => [...home].map(e=>e.classList.add('noVisible'))
-
-    const contenedorPop = document.getElementById('contenedorPop');
-    const siContenedorPop= () =>contenedorPop.classList.remove('noVisible')
 
     noPres();
     borrarHome();
@@ -97,8 +116,11 @@ const pop = () =>{
     .then(res => res.json())
     .then(movie => {
 
+        total.textContent= `${movie.total_results} results` 
         const movies = movie.results;
         const ul = document.querySelector(".verPelis")
+
+        titulo.textContent= 'Popular Movies';
     
         ul.innerHTML = movies.map(e=>{
             return `<li class="pelis">
@@ -112,23 +134,22 @@ const pop = () =>{
 
 //Top Rated
 const topR = () =>{ 
-    const pres = document.querySelector(".presentacion");
+
     const noPres= () => pres.classList.add('noVisible');
-
-    const home = document.getElementsByClassName('home');
     const borrarHome= () => [...home].map(e=>e.classList.add('noVisible'))
-
-    const contenedorPop = document.getElementById('contenedorPop');
     const siContenedorPop= () =>contenedorPop.classList.remove('noVisible')
 
     noPres();
     borrarHome();
     siContenedorPop();
 
+    titulo.textContent= 'Top Rated';
+
     fetch (`${topRated}&page=${paginaActual}`)
     .then(res => res.json())
     .then(movie => {
 
+        total.textContent= `${movie.total_results} results` 
         const movies = movie.results;
         const ul = document.querySelector(".verPelis")
     
@@ -144,23 +165,22 @@ const topR = () =>{
 
 //Upcoming
 const upcom = () =>{ 
-    const pres = document.querySelector(".presentacion");
+  
     const noPres= () => pres.classList.add('noVisible');
-
-    const home = document.getElementsByClassName('home');
     const borrarHome= () => [...home].map(e=>e.classList.add('noVisible'))
-
-    const contenedorPop = document.getElementById('contenedorPop');
     const siContenedorPop= () =>contenedorPop.classList.remove('noVisible')
 
     noPres();
     borrarHome();
     siContenedorPop();
 
+    titulo.textContent ='Upcoming';
+
     fetch (`${upcoming}&page=${paginaActual}`)
     .then(res => res.json())
     .then(movie => {
 
+        total.textContent= `${movie.total_results} results` 
         const movies = movie.results;
         const ul = document.querySelector(".verPelis")
     
@@ -176,23 +196,22 @@ const upcom = () =>{
 
 //now playing
 const nowp = () =>{ 
-    const pres = document.querySelector(".presentacion");
+    
     const noPres= () => pres.classList.add('noVisible');
-
-    const home = document.getElementsByClassName('home');
     const borrarHome= () => [...home].map(e=>e.classList.add('noVisible'))
-
-    const contenedorPop = document.getElementById('contenedorPop');
     const siContenedorPop= () =>contenedorPop.classList.remove('noVisible')
 
     noPres();
     borrarHome();
     siContenedorPop();
 
+    titulo.textContent = 'Now Playing';
+
     fetch (`${nowPlaying}&page=${paginaActual}`)
     .then(res => res.json())
     .then(movie => {
 
+        total.textContent= `${movie.total_results} results` 
         const movies = movie.results;
         const ul = document.querySelector(".verPelis")
     
@@ -201,21 +220,7 @@ const nowp = () =>{
             <div class="imagen"><img src="${dire}${e.poster_path}"/></div>
             <div class="tituloPeli">${e.title}</div>
             </li>`
-    }).join('');
+        }).join('');
     
     })
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
