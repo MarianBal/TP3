@@ -1,26 +1,24 @@
 console.log('Hola Mundo')
 
-//Hamburguesa
-
-const menuHamburguesa = () =>{
-    //const hamb = document.getElementById('hamburguesa')
-    const contenedor = document.querySelector(".contenedor")
-    const menuH = document.querySelector('.menuH')
-    const siMenu = () => menuH.classList.remove('noVisible')
-    const noContenedor = () => contenedor.classList.add('noVisible');
-
-    siMenu();
-    noContenedor();
-
-}
-
 //selecciones
+const contenedor = document.querySelector(".contenedor")
 const pres = document.querySelector(".presentacion");
 const contenedorPop = document.getElementById('contenedorPop');
 const home = document.getElementsByClassName('home');
 const total = document.querySelector('.total');
 const titulo = document.querySelector(".titulo");
-const pelis = document.getElementsByClassName('pelis')
+const pelis = document.getElementsByClassName('pelis');
+const menuH = document.querySelector('.menuH');
+
+
+//Hamburguesa
+const menuHamburguesa = () =>{
+    const noContenedor = () => contenedor.classList.add('noVisible');
+    const siMenu = () => menuH.classList.remove('noVisible')
+
+    siMenu();
+    noContenedor();
+}
 
 //Api
 const apiKey= `8bdfee1cadeaa7c6f8c489f17f927c3d`;
@@ -32,17 +30,26 @@ const nowPlaying =`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiK
 
 const dire = `https://image.tmdb.org/t/p/w370_and_h556_bestv2`
 
+//funciones
+const noPop = () =>contenedorPop.classList.add('noVisible');
+const siContenedorPop= () =>contenedorPop.classList.remove('noVisible');
+const siContenedor =() => contenedor.classList.remove('noVisible');
+const siPres = () => pres.classList.remove('noVisible')
+const noPres= () => pres.classList.add('noVisible');
+const siHome = () => [...home].map(e=>e.classList.remove('noVisible'))
+const borrarHome= () => [...home].map(e=>e.classList.add('noVisible'));
+const noMenuH = () => menuH.classList.add('noVisible');
+
+
 //Home
 const ada = () => {
 
-    const noPop = () =>contenedorPop.classList.add('noVisible');
-    const siPres = () => pres.classList.remove('noVisible')
-    const siHome = () => [...home].map(e=>e.classList.remove('noVisible'))
-
-    noPop()
-    siPres()
-    siHome()
-
+    siContenedor();
+    noPop();
+    siPres();
+    siHome();
+    noMenuH();
+    
     let j=0;
 
     fetch (`${popular}&page=${paginaActual}`)
@@ -108,14 +115,11 @@ const nowPlayingBoton = document.getElementsByClassName('categorias')[3];
 //popular
 const pop = () =>{ 
 
-    const noPres= () => pres.classList.add('noVisible');
-    const borrarHome= () => [...home].map(e=>e.classList.add('noVisible'));
-    const siContenedorPop= () =>contenedorPop.classList.remove('noVisible');
-
-
+    siContenedor();
     noPres();
     borrarHome();
     siContenedorPop();
+    noMenuH();
 
     fetch (`${popular}&page=${paginaActual}`)
     .then(res => res.json())
@@ -140,13 +144,11 @@ const pop = () =>{
 //Top Rated
 const topR = () =>{ 
 
-    const noPres= () => pres.classList.add('noVisible');
-    const borrarHome= () => [...home].map(e=>e.classList.add('noVisible'))
-    const siContenedorPop= () =>contenedorPop.classList.remove('noVisible')
-
+    siContenedor();
     noPres();
     borrarHome();
     siContenedorPop();
+    noMenuH();
 
     titulo.textContent= 'Top Rated';
 
@@ -170,14 +172,12 @@ const topR = () =>{
 
 //Upcoming
 const upcom = () =>{ 
-  
-    const noPres= () => pres.classList.add('noVisible');
-    const borrarHome= () => [...home].map(e=>e.classList.add('noVisible'))
-    const siContenedorPop= () =>contenedorPop.classList.remove('noVisible')
 
+    siContenedor();
     noPres();
     borrarHome();
     siContenedorPop();
+    noMenuH();
 
     titulo.textContent ='Upcoming';
 
@@ -201,14 +201,13 @@ const upcom = () =>{
 
 //now playing
 const nowp = () =>{ 
-    
-    const noPres= () => pres.classList.add('noVisible');
-    const borrarHome= () => [...home].map(e=>e.classList.add('noVisible'))
-    const siContenedorPop= () =>contenedorPop.classList.remove('noVisible')
 
+    siContenedor();
+    noMenuH();
     noPres();
     borrarHome();
     siContenedorPop();
+    
 
     titulo.textContent = 'Now Playing';
 
