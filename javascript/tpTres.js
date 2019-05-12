@@ -1,14 +1,18 @@
 console.log('Hola Mundo')
 
 //Hamburguesa
-const hamb = document.getElementById('hamburguesa')
-const contenedor = document.querySelector(".contenedor")
 
-const menuH = document.getElementById('.menuH');
-const siMenu = () => menuH.classList.remove('noVisible')
+const menuHamburguesa = () =>{
+    //const hamb = document.getElementById('hamburguesa')
+    const contenedor = document.querySelector(".contenedor")
+    const menuH = document.querySelector('.menuH')
+    const siMenu = () => menuH.classList.remove('noVisible')
+    const noContenedor = () => contenedor.classList.add('noVisible');
 
-const noContenedor = () => contenedor.classList.add('noVisible');
-const pelis = document.getElementsByClassName('pelis')
+    siMenu();
+    noContenedor();
+
+}
 
 //selecciones
 const pres = document.querySelector(".presentacion");
@@ -16,6 +20,7 @@ const contenedorPop = document.getElementById('contenedorPop');
 const home = document.getElementsByClassName('home');
 const total = document.querySelector('.total');
 const titulo = document.querySelector(".titulo");
+const pelis = document.getElementsByClassName('pelis')
 
 //Api
 const apiKey= `8bdfee1cadeaa7c6f8c489f17f927c3d`;

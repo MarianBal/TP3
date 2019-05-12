@@ -16,6 +16,7 @@ body{
     margin: 0; 
     font-family: $fuente;
     color: $color-tipo;
+    list-style:none;
 
     .sticky{
         position: -webkit-sticky; /* Safari */
@@ -85,7 +86,6 @@ body{
         @include flexbox(row, flex-start, flex-start);
         
         ul{
-            list-style:none;
             @include flexbox(column, flex-start,center);
             background-color:$fondo;
             margin: 0;
@@ -224,6 +224,9 @@ body{
             }
         }
     }
+    .menuH{
+        display:none;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -330,14 +333,31 @@ body{
        
         .menuH{
             width:100%;
-            height:100vh;
-            background:red;
-            @include flexbox(row, flex-start, flex-start);
+            height: 80vh;
+            background:$contenedor;
+            @include flexbox(row, center, flex-start);
             flex-wrap: wrap;
+            list-style:none;
+            margin:0;
+            padding:0;
 
             .menuHamb{
                 width:50%;
                 height: 50%;
+                @include flexbox(column, center, center);
+                cursor:pointer;
+
+                svg{
+                    width: 20px;
+                    height: 20px;
+                    color: $fondo;  
+                    margin-bottom: 3px;
+                }
+
+                p{
+                    margin-bottom: 10px;
+                }
+
             }
         }
     } 
