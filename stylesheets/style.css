@@ -69,7 +69,7 @@ body .sticky nav .buscador input {
   box-sizing: border-box;
   margin-left: 15px;
 }
-/* line 74, ../sass/style.scss */
+/* line 73, ../sass/style.scss */
 body .sticky nav #hamburguesa {
   width: 20px;
   height: 20px;
@@ -77,7 +77,7 @@ body .sticky nav #hamburguesa {
   margin-right: 2%;
   display: none;
 }
-/* line 84, ../sass/style.scss */
+/* line 83, ../sass/style.scss */
 body .contenedor {
   width: 100%;
   display: flex;
@@ -85,7 +85,7 @@ body .contenedor {
   justify-content: flex-start;
   align-items: flex-start;
 }
-/* line 88, ../sass/style.scss */
+/* line 87, ../sass/style.scss */
 body .contenedor ul {
   display: flex;
   flex-direction: column;
@@ -98,7 +98,7 @@ body .contenedor ul {
   position: sticky;
   top: 75px;
 }
-/* line 97, ../sass/style.scss */
+/* line 96, ../sass/style.scss */
 body .contenedor ul .categorias {
   width: 95px;
   height: 95px;
@@ -112,18 +112,18 @@ body .contenedor ul .categorias {
   justify-content: center;
   align-items: center;
 }
-/* line 107, ../sass/style.scss */
+/* line 106, ../sass/style.scss */
 body .contenedor ul .categorias svg {
   width: 20px;
   height: 20px;
   color: white;
   margin-bottom: 5px;
 }
-/* line 114, ../sass/style.scss */
+/* line 113, ../sass/style.scss */
 body .contenedor ul .categorias p {
   margin-bottom: 10px;
 }
-/* line 121, ../sass/style.scss */
+/* line 120, ../sass/style.scss */
 body .contenedorVertical {
   width: 100%;
   margin: 0;
@@ -134,7 +134,7 @@ body .contenedorVertical {
   justify-content: flex-start;
   align-items: center;
 }
-/* line 129, ../sass/style.scss */
+/* line 128, ../sass/style.scss */
 body .contenedorVertical .presentacion {
   width: 100%;
   height: 384px;
@@ -145,7 +145,7 @@ body .contenedorVertical .presentacion {
   display: block;
   position: relative;
 }
-/* line 139, ../sass/style.scss */
+/* line 138, ../sass/style.scss */
 body .contenedorVertical .presentacion .opacidad {
   width: 100%;
   height: 384px;
@@ -155,7 +155,7 @@ body .contenedorVertical .presentacion .opacidad {
   opacity: 0.7;
   margin: 0;
 }
-/* line 149, ../sass/style.scss */
+/* line 148, ../sass/style.scss */
 body .contenedorVertical .presentacion .texto {
   width: 100%;
   height: 384px;
@@ -165,7 +165,7 @@ body .contenedorVertical .presentacion .texto {
   justify-content: center;
   align-items: center;
 }
-/* line 156, ../sass/style.scss */
+/* line 155, ../sass/style.scss */
 body .contenedorVertical .presentacion .texto h1 {
   font-size: 28px;
   font-weight: 500;
@@ -173,14 +173,14 @@ body .contenedorVertical .presentacion .texto h1 {
   text-transform: uppercase;
   color: #081c24;
 }
-/* line 166, ../sass/style.scss */
+/* line 165, ../sass/style.scss */
 body .contenedorVertical .contenedorPeliculas {
   width: 100%;
   box-sizing: border-box;
   padding: 25px;
   background-color: #f8f8f8;
 }
-/* line 172, ../sass/style.scss */
+/* line 171, ../sass/style.scss */
 body .contenedorVertical .contenedorPeliculas nav {
   width: 100%;
   padding: 23px 15px;
@@ -191,21 +191,21 @@ body .contenedorVertical .contenedorPeliculas nav {
   justify-content: space-between;
   align-items: center;
 }
-/* line 179, ../sass/style.scss */
+/* line 178, ../sass/style.scss */
 body .contenedorVertical .contenedorPeliculas nav h2 {
   font-size: 18px;
   font-weight: 300;
   color: #081c24;
   margin: 0;
 }
-/* line 186, ../sass/style.scss */
+/* line 185, ../sass/style.scss */
 body .contenedorVertical .contenedorPeliculas nav h3 {
   font-size: 12px;
   font-weight: 300;
   margin: 0;
   cursor: pointer;
 }
-/* line 194, ../sass/style.scss */
+/* line 193, ../sass/style.scss */
 body .contenedorVertical .contenedorPeliculas ul {
   width: 100%;
   display: flex;
@@ -215,7 +215,7 @@ body .contenedorVertical .contenedorPeliculas ul {
   flex-wrap: wrap;
   background-color: #f8f8f8;
 }
-/* line 200, ../sass/style.scss */
+/* line 199, ../sass/style.scss */
 body .contenedorVertical .contenedorPeliculas ul .pelis {
   width: 20%;
   padding: 30px;
@@ -226,51 +226,78 @@ body .contenedorVertical .contenedorPeliculas ul .pelis {
   justify-content: space-between;
   align-items: center;
 }
-/* line 210, ../sass/style.scss */
+/* line 209, ../sass/style.scss */
 body .contenedorVertical .contenedorPeliculas ul .pelis .imagen img {
   width: 100%;
   height: auto;
 }
-/* line 216, ../sass/style.scss */
+/* line 215, ../sass/style.scss */
 body .contenedorVertical .contenedorPeliculas ul .pelis .tituloPeli {
   font-size: 14px;
   color: #838D91;
   margin-top: 15px;
   text-transform: capitalize;
 }
-/* line 227, ../sass/style.scss */
+/* line 226, ../sass/style.scss */
 body .menuH {
   display: none;
 }
+/* line 229, ../sass/style.scss */
+body .boton {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+/* line 233, ../sass/style.scss */
+body .boton button {
+  width: 95px;
+  height: 36px;
+  border: 1px solid;
+  border-color: #081c24;
+  color: #081c24;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+/* line 244, ../sass/style.scss */
+body .boton button:hover {
+  background-color: #081c24;
+  color: white;
+}
 
 @media screen and (max-width: 768px) {
-  /* line 236, ../sass/style.scss */
+  /* line 255, ../sass/style.scss */
   body nav {
     height: 50px;
   }
-  /* line 239, ../sass/style.scss */
+  /* line 258, ../sass/style.scss */
   body nav #logo {
     width: 55px;
     height: 50px;
     margin-right: 2%;
   }
-  /* line 244, ../sass/style.scss */
+  /* line 263, ../sass/style.scss */
   body nav #logo #capa_1 {
     width: 35px;
     height: 31px;
   }
-  /* line 250, ../sass/style.scss */
+  /* line 269, ../sass/style.scss */
   body nav .buscador {
     width: 75%;
     height: 50px;
     margin-right: 1%;
   }
-  /* line 255, ../sass/style.scss */
+  /* line 274, ../sass/style.scss */
   body nav .buscador svg {
     width: 14px;
     height: 14px;
   }
-  /* line 260, ../sass/style.scss */
+  /* line 279, ../sass/style.scss */
   body nav .buscador input {
     width: 60%;
     font-weight: 300;
@@ -279,13 +306,13 @@ body .menuH {
     box-sizing: border-box;
     margin-left: 15px;
   }
-  /* line 270, ../sass/style.scss */
+  /* line 289, ../sass/style.scss */
   body nav #hamburguesa {
     display: inline !important;
     margin-right: 2%;
     cursor: pointer;
   }
-  /* line 277, ../sass/style.scss */
+  /* line 296, ../sass/style.scss */
   body .contenedor {
     width: 100%;
     display: flex;
@@ -293,54 +320,54 @@ body .menuH {
     justify-content: flex-start;
     align-items: flex-start;
   }
-  /* line 281, ../sass/style.scss */
+  /* line 300, ../sass/style.scss */
   body .contenedor ul {
     display: none;
   }
-  /* line 288, ../sass/style.scss */
+  /* line 307, ../sass/style.scss */
   body .contenedorVertical .presentacion {
     height: 200px;
   }
-  /* line 291, ../sass/style.scss */
+  /* line 310, ../sass/style.scss */
   body .contenedorVertical .presentacion .opacidad {
     height: 200px;
   }
-  /* line 295, ../sass/style.scss */
+  /* line 314, ../sass/style.scss */
   body .contenedorVertical .presentacion .texto {
     height: 200px;
   }
-  /* line 298, ../sass/style.scss */
+  /* line 317, ../sass/style.scss */
   body .contenedorVertical .presentacion .texto h1 {
     font-size: 22px;
   }
-  /* line 304, ../sass/style.scss */
+  /* line 323, ../sass/style.scss */
   body .contenedorVertical .contenedorPeliculas {
     padding: 10px;
   }
-  /* line 307, ../sass/style.scss */
+  /* line 326, ../sass/style.scss */
   body .contenedorVertical .contenedorPeliculas nav {
     padding: 20px 10px;
   }
-  /* line 310, ../sass/style.scss */
+  /* line 329, ../sass/style.scss */
   body .contenedorVertical .contenedorPeliculas nav h2 {
     font-size: 16px;
   }
-  /* line 316, ../sass/style.scss */
+  /* line 335, ../sass/style.scss */
   body .contenedorVertical .contenedorPeliculas ul .pelis {
     width: 50%;
     height: 100%;
   }
-  /* line 320, ../sass/style.scss */
+  /* line 339, ../sass/style.scss */
   body .contenedorVertical .contenedorPeliculas ul .pelis .tituloPeli {
     width: 100%;
     font-size: 12px;
     text-align: left;
   }
-  /* line 327, ../sass/style.scss */
+  /* line 346, ../sass/style.scss */
   body .contenedorVertical .contenedorPeliculas ul .quinta {
     display: none;
   }
-  /* line 334, ../sass/style.scss */
+  /* line 353, ../sass/style.scss */
   body .menuH {
     width: 100%;
     height: 80vh;
@@ -354,7 +381,7 @@ body .menuH {
     margin: 0;
     padding: 0;
   }
-  /* line 344, ../sass/style.scss */
+  /* line 363, ../sass/style.scss */
   body .menuH .menuHamb {
     width: 50%;
     height: 50%;
@@ -364,19 +391,19 @@ body .menuH {
     align-items: center;
     cursor: pointer;
   }
-  /* line 350, ../sass/style.scss */
+  /* line 369, ../sass/style.scss */
   body .menuH .menuHamb svg {
     width: 20px;
     height: 20px;
     color: white;
     margin-bottom: 3px;
   }
-  /* line 357, ../sass/style.scss */
+  /* line 376, ../sass/style.scss */
   body .menuH .menuHamb p {
     margin-bottom: 10px;
   }
 }
-/* line 366, ../sass/style.scss */
+/* line 385, ../sass/style.scss */
 .noVisible {
   display: none !important;
 }

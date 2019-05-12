@@ -68,7 +68,6 @@ body{
                     @include borderBox();
                     margin-left: 15px;
                 }
-
             }
 
             #hamburguesa{
@@ -217,7 +216,7 @@ body{
                         font-size:14px;
                         color:$color-tipo;
                         margin-top:15px;
-                        text-transform: capitalize;
+                        text-transform:capitalize;
                     }
                 }
 
@@ -226,6 +225,26 @@ body{
     }
     .menuH{
         display:none;
+    }
+    .boton{
+        width:100%;
+        @include flexbox(row, center, center);
+
+        button{
+            width:95px;
+            height: 36px;
+            border: 1px solid;
+            border-color: $boton;
+            color:$boton;
+            @include flexbox(row, center, center);
+            text-transform:uppercase;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background-color: $boton;
+            color:$fondo;
+        }
     }
 }
 

@@ -10,6 +10,16 @@ const titulo = document.querySelector(".titulo");
 const pelis = document.getElementsByClassName('pelis');
 const menuH = document.querySelector('.menuH');
 
+//funciones
+const noPop = () =>contenedorPop.classList.add('noVisible');
+const siContenedorPop= () =>contenedorPop.classList.remove('noVisible');
+const siContenedor =() => contenedor.classList.remove('noVisible');
+const siPres = () => pres.classList.remove('noVisible');
+const noPres= () => pres.classList.add('noVisible');
+const siHome = () => [...home].map(e=>e.classList.remove('noVisible'))
+const borrarHome= () => [...home].map(e=>e.classList.add('noVisible'));
+const noMenuH = () => menuH.classList.add('noVisible');
+
 
 //Hamburguesa
 const menuHamburguesa = () =>{
@@ -29,17 +39,6 @@ const upcoming = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&
 const nowPlaying =`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=${paginaActual}`
 
 const dire = `https://image.tmdb.org/t/p/w370_and_h556_bestv2`
-
-//funciones
-const noPop = () =>contenedorPop.classList.add('noVisible');
-const siContenedorPop= () =>contenedorPop.classList.remove('noVisible');
-const siContenedor =() => contenedor.classList.remove('noVisible');
-const siPres = () => pres.classList.remove('noVisible')
-const noPres= () => pres.classList.add('noVisible');
-const siHome = () => [...home].map(e=>e.classList.remove('noVisible'))
-const borrarHome= () => [...home].map(e=>e.classList.add('noVisible'));
-const noMenuH = () => menuH.classList.add('noVisible');
-
 
 //Home
 const ada = () => {
@@ -128,7 +127,6 @@ const pop = () =>{
         total.textContent= `${movie.total_results} results` 
         const movies = movie.results;
         const ul = document.querySelector(".verPelis")
-
         titulo.textContent= 'Popular Movies';
     
         ul.innerHTML = movies.map(e=>{
@@ -136,8 +134,7 @@ const pop = () =>{
             <div class="imagen"><img src="${dire}${e.poster_path}"/></div>
             <div class="tituloPeli">${e.title}</div>
             </li>`
-    }).join('');
-    
+    }).join('') + `<div class="boton"><button>load more</button></div>`;
     })
 }
 
@@ -166,6 +163,13 @@ const topR = () =>{
             <div class="tituloPeli">${e.title}</div>
             </li>`
     }).join('');
+
+
+    const boton = document.createElement('button');
+    boton.textContent = 'load more';
+    boton.classList.add('boton')
+    contenedorPop.appendChild(boton);
+
     
     })
 }
