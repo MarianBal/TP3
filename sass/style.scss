@@ -31,6 +31,27 @@ body{
             
             @include flexbox (row, space-between, center);
             z-index:1;
+            position:relative;
+
+            ul{
+                list-style:none;
+                position:absolute;
+                top:59px;
+
+                li{
+                    width: 180px;
+                    height:70px;
+                    background-color:$fondo;
+                    font-size: 14px;
+                    text-align: center;
+                    @include flexbox(column, center, center);
+                    cursor: pointer;
+                }
+
+                li:hover{
+                    color:$boton;
+                }
+            }
             
             #logo{
                 width:95px;

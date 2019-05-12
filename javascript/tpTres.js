@@ -9,6 +9,7 @@ const total = document.querySelector('.total');
 const titulo = document.querySelector(".titulo");
 const pelis = document.getElementsByClassName('pelis');
 const menuH = document.querySelector('.menuH');
+const input = document.querySelector('input');
 
 //funciones
 const noPop = () =>contenedorPop.classList.add('noVisible');
@@ -351,5 +352,31 @@ const nowpBoton = () =>{
             </li>`
         }).join('') + `<div class="boton"><button onclick="upcomBoton()">load more</button></div>`;
     
+    })
+}
+
+input.onkeyup = () =>{
+    const q = input.value;
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=a70dbfe19b800809dfdd3e89e8532c9e&query=${q}`;
+
+    fetch(url)
+    .then(res =>res.json())
+    .then(data => {
+
+        const movies = data.results;
+        const ul = document.getElementById('resultados');
+
+        ul.innerHTML = movies.map(movie => `<li class="lista">${movie.title}</li>`).join('');
+
+        ul.style.display = 'block';
+
+        document
+            .querySelectorAll('lista')
+            .forEach(function (li) {
+               li.addEventListener('click', function (e) {
+               input.value = e.target.innerHTML;
+               ul.style.display = 'none';
+               })
+            })
     })
 }

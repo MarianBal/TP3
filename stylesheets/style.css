@@ -24,8 +24,32 @@ body .sticky nav {
   justify-content: space-between;
   align-items: center;
   z-index: 1;
+  position: relative;
 }
-/* line 35, ../sass/style.scss */
+/* line 36, ../sass/style.scss */
+body .sticky nav ul {
+  list-style: none;
+  position: absolute;
+  top: 59px;
+}
+/* line 41, ../sass/style.scss */
+body .sticky nav ul li {
+  width: 180px;
+  height: 70px;
+  background-color: white;
+  font-size: 14px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+/* line 51, ../sass/style.scss */
+body .sticky nav ul li:hover {
+  color: #081c24;
+}
+/* line 56, ../sass/style.scss */
 body .sticky nav #logo {
   width: 95px;
   height: 75px;
@@ -36,13 +60,13 @@ body .sticky nav #logo {
   align-items: center;
   cursor: pointer;
 }
-/* line 42, ../sass/style.scss */
+/* line 63, ../sass/style.scss */
 body .sticky nav #logo #capa_1 {
   width: 45px;
   height: 40px;
   margin: 0;
 }
-/* line 49, ../sass/style.scss */
+/* line 70, ../sass/style.scss */
 body .sticky nav .buscador {
   width: 85%;
   height: 75px;
@@ -54,13 +78,13 @@ body .sticky nav .buscador {
   align-items: center;
   margin-right: 4%;
 }
-/* line 57, ../sass/style.scss */
+/* line 78, ../sass/style.scss */
 body .sticky nav .buscador svg {
   width: 18px;
   height: 18px;
   color: #838D91;
 }
-/* line 63, ../sass/style.scss */
+/* line 84, ../sass/style.scss */
 body .sticky nav .buscador input {
   width: 80%;
   font-weight: 300;
@@ -69,7 +93,7 @@ body .sticky nav .buscador input {
   box-sizing: border-box;
   margin-left: 15px;
 }
-/* line 73, ../sass/style.scss */
+/* line 94, ../sass/style.scss */
 body .sticky nav #hamburguesa {
   width: 20px;
   height: 20px;
@@ -77,7 +101,7 @@ body .sticky nav #hamburguesa {
   margin-right: 2%;
   display: none;
 }
-/* line 83, ../sass/style.scss */
+/* line 104, ../sass/style.scss */
 body .contenedor {
   width: 100%;
   display: flex;
@@ -85,7 +109,7 @@ body .contenedor {
   justify-content: flex-start;
   align-items: flex-start;
 }
-/* line 87, ../sass/style.scss */
+/* line 108, ../sass/style.scss */
 body .contenedor ul {
   display: flex;
   flex-direction: column;
@@ -98,7 +122,7 @@ body .contenedor ul {
   position: sticky;
   top: 75px;
 }
-/* line 96, ../sass/style.scss */
+/* line 117, ../sass/style.scss */
 body .contenedor ul .categorias {
   width: 95px;
   height: 95px;
@@ -112,18 +136,18 @@ body .contenedor ul .categorias {
   justify-content: center;
   align-items: center;
 }
-/* line 106, ../sass/style.scss */
+/* line 127, ../sass/style.scss */
 body .contenedor ul .categorias svg {
   width: 20px;
   height: 20px;
   color: white;
   margin-bottom: 5px;
 }
-/* line 113, ../sass/style.scss */
+/* line 134, ../sass/style.scss */
 body .contenedor ul .categorias p {
   margin-bottom: 10px;
 }
-/* line 120, ../sass/style.scss */
+/* line 141, ../sass/style.scss */
 body .contenedorVertical {
   width: 100%;
   margin: 0;
@@ -134,7 +158,7 @@ body .contenedorVertical {
   justify-content: flex-start;
   align-items: center;
 }
-/* line 128, ../sass/style.scss */
+/* line 149, ../sass/style.scss */
 body .contenedorVertical .presentacion {
   width: 100%;
   height: 384px;
@@ -145,7 +169,7 @@ body .contenedorVertical .presentacion {
   display: block;
   position: relative;
 }
-/* line 138, ../sass/style.scss */
+/* line 159, ../sass/style.scss */
 body .contenedorVertical .presentacion .opacidad {
   width: 100%;
   height: 384px;
@@ -155,7 +179,7 @@ body .contenedorVertical .presentacion .opacidad {
   opacity: 0.7;
   margin: 0;
 }
-/* line 148, ../sass/style.scss */
+/* line 169, ../sass/style.scss */
 body .contenedorVertical .presentacion .texto {
   width: 100%;
   height: 384px;
@@ -165,7 +189,7 @@ body .contenedorVertical .presentacion .texto {
   justify-content: center;
   align-items: center;
 }
-/* line 155, ../sass/style.scss */
+/* line 176, ../sass/style.scss */
 body .contenedorVertical .presentacion .texto h1 {
   font-size: 28px;
   font-weight: 500;
@@ -173,14 +197,14 @@ body .contenedorVertical .presentacion .texto h1 {
   text-transform: uppercase;
   color: #081c24;
 }
-/* line 165, ../sass/style.scss */
+/* line 186, ../sass/style.scss */
 body .contenedorVertical .contenedorPeliculas {
   width: 100%;
   box-sizing: border-box;
   padding: 25px;
   background-color: #f8f8f8;
 }
-/* line 171, ../sass/style.scss */
+/* line 192, ../sass/style.scss */
 body .contenedorVertical .contenedorPeliculas nav {
   width: 100%;
   padding: 23px 15px;
@@ -191,21 +215,21 @@ body .contenedorVertical .contenedorPeliculas nav {
   justify-content: space-between;
   align-items: center;
 }
-/* line 178, ../sass/style.scss */
+/* line 199, ../sass/style.scss */
 body .contenedorVertical .contenedorPeliculas nav h2 {
   font-size: 18px;
   font-weight: 300;
   color: #081c24;
   margin: 0;
 }
-/* line 185, ../sass/style.scss */
+/* line 206, ../sass/style.scss */
 body .contenedorVertical .contenedorPeliculas nav h3 {
   font-size: 12px;
   font-weight: 300;
   margin: 0;
   cursor: pointer;
 }
-/* line 193, ../sass/style.scss */
+/* line 214, ../sass/style.scss */
 body .contenedorVertical .contenedorPeliculas ul {
   width: 100%;
   display: flex;
@@ -215,7 +239,7 @@ body .contenedorVertical .contenedorPeliculas ul {
   flex-wrap: wrap;
   background-color: #f8f8f8;
 }
-/* line 199, ../sass/style.scss */
+/* line 220, ../sass/style.scss */
 body .contenedorVertical .contenedorPeliculas ul .pelis {
   width: 20%;
   padding: 30px;
@@ -226,23 +250,23 @@ body .contenedorVertical .contenedorPeliculas ul .pelis {
   justify-content: space-between;
   align-items: center;
 }
-/* line 209, ../sass/style.scss */
+/* line 230, ../sass/style.scss */
 body .contenedorVertical .contenedorPeliculas ul .pelis .imagen img {
   width: 100%;
   height: auto;
 }
-/* line 215, ../sass/style.scss */
+/* line 236, ../sass/style.scss */
 body .contenedorVertical .contenedorPeliculas ul .pelis .tituloPeli {
   font-size: 14px;
   color: #838D91;
   margin-top: 15px;
   text-transform: capitalize;
 }
-/* line 226, ../sass/style.scss */
+/* line 247, ../sass/style.scss */
 body .menuH {
   display: none;
 }
-/* line 229, ../sass/style.scss */
+/* line 250, ../sass/style.scss */
 body .boton {
   width: 100%;
   display: flex;
@@ -250,7 +274,7 @@ body .boton {
   justify-content: center;
   align-items: center;
 }
-/* line 233, ../sass/style.scss */
+/* line 254, ../sass/style.scss */
 body .boton button {
   width: 95px;
   height: 36px;
@@ -264,40 +288,40 @@ body .boton button {
   text-transform: uppercase;
   cursor: pointer;
 }
-/* line 244, ../sass/style.scss */
+/* line 265, ../sass/style.scss */
 body .boton button:hover {
   background-color: #081c24;
   color: white;
 }
 
 @media screen and (max-width: 768px) {
-  /* line 255, ../sass/style.scss */
+  /* line 276, ../sass/style.scss */
   body nav {
     height: 50px;
   }
-  /* line 258, ../sass/style.scss */
+  /* line 279, ../sass/style.scss */
   body nav #logo {
     width: 55px;
     height: 50px;
     margin-right: 2%;
   }
-  /* line 263, ../sass/style.scss */
+  /* line 284, ../sass/style.scss */
   body nav #logo #capa_1 {
     width: 35px;
     height: 31px;
   }
-  /* line 269, ../sass/style.scss */
+  /* line 290, ../sass/style.scss */
   body nav .buscador {
     width: 75%;
     height: 50px;
     margin-right: 1%;
   }
-  /* line 274, ../sass/style.scss */
+  /* line 295, ../sass/style.scss */
   body nav .buscador svg {
     width: 14px;
     height: 14px;
   }
-  /* line 279, ../sass/style.scss */
+  /* line 300, ../sass/style.scss */
   body nav .buscador input {
     width: 60%;
     font-weight: 300;
@@ -306,13 +330,13 @@ body .boton button:hover {
     box-sizing: border-box;
     margin-left: 15px;
   }
-  /* line 289, ../sass/style.scss */
+  /* line 310, ../sass/style.scss */
   body nav #hamburguesa {
     display: inline !important;
     margin-right: 2%;
     cursor: pointer;
   }
-  /* line 296, ../sass/style.scss */
+  /* line 317, ../sass/style.scss */
   body .contenedor {
     width: 100%;
     display: flex;
@@ -320,54 +344,54 @@ body .boton button:hover {
     justify-content: flex-start;
     align-items: flex-start;
   }
-  /* line 300, ../sass/style.scss */
+  /* line 321, ../sass/style.scss */
   body .contenedor ul {
     display: none;
   }
-  /* line 307, ../sass/style.scss */
+  /* line 328, ../sass/style.scss */
   body .contenedorVertical .presentacion {
     height: 200px;
   }
-  /* line 310, ../sass/style.scss */
+  /* line 331, ../sass/style.scss */
   body .contenedorVertical .presentacion .opacidad {
     height: 200px;
   }
-  /* line 314, ../sass/style.scss */
+  /* line 335, ../sass/style.scss */
   body .contenedorVertical .presentacion .texto {
     height: 200px;
   }
-  /* line 317, ../sass/style.scss */
+  /* line 338, ../sass/style.scss */
   body .contenedorVertical .presentacion .texto h1 {
     font-size: 22px;
   }
-  /* line 323, ../sass/style.scss */
+  /* line 344, ../sass/style.scss */
   body .contenedorVertical .contenedorPeliculas {
     padding: 10px;
   }
-  /* line 326, ../sass/style.scss */
+  /* line 347, ../sass/style.scss */
   body .contenedorVertical .contenedorPeliculas nav {
     padding: 20px 10px;
   }
-  /* line 329, ../sass/style.scss */
+  /* line 350, ../sass/style.scss */
   body .contenedorVertical .contenedorPeliculas nav h2 {
     font-size: 16px;
   }
-  /* line 335, ../sass/style.scss */
+  /* line 356, ../sass/style.scss */
   body .contenedorVertical .contenedorPeliculas ul .pelis {
     width: 50%;
     height: 100%;
   }
-  /* line 339, ../sass/style.scss */
+  /* line 360, ../sass/style.scss */
   body .contenedorVertical .contenedorPeliculas ul .pelis .tituloPeli {
     width: 100%;
     font-size: 12px;
     text-align: left;
   }
-  /* line 346, ../sass/style.scss */
+  /* line 367, ../sass/style.scss */
   body .contenedorVertical .contenedorPeliculas ul .quinta {
     display: none;
   }
-  /* line 353, ../sass/style.scss */
+  /* line 374, ../sass/style.scss */
   body .menuH {
     width: 100%;
     height: 80vh;
@@ -381,7 +405,7 @@ body .boton button:hover {
     margin: 0;
     padding: 0;
   }
-  /* line 363, ../sass/style.scss */
+  /* line 384, ../sass/style.scss */
   body .menuH .menuHamb {
     width: 50%;
     height: 50%;
@@ -391,19 +415,19 @@ body .boton button:hover {
     align-items: center;
     cursor: pointer;
   }
-  /* line 369, ../sass/style.scss */
+  /* line 390, ../sass/style.scss */
   body .menuH .menuHamb svg {
     width: 20px;
     height: 20px;
     color: white;
     margin-bottom: 3px;
   }
-  /* line 376, ../sass/style.scss */
+  /* line 397, ../sass/style.scss */
   body .menuH .menuHamb p {
     margin-bottom: 10px;
   }
 }
-/* line 385, ../sass/style.scss */
+/* line 406, ../sass/style.scss */
 .noVisible {
   display: none !important;
 }
