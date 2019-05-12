@@ -120,6 +120,8 @@ const pop = () =>{
     siContenedorPop();
     noMenuH();
 
+    paginaActual = 1;
+
     fetch (`${popular}&page=${paginaActual}`)
     .then(res => res.json())
     .then(movie => {
@@ -134,12 +136,73 @@ const pop = () =>{
             <div class="imagen"><img src="${dire}${e.poster_path}"/></div>
             <div class="tituloPeli">${e.title}</div>
             </li>`
-    }).join('') + `<div class="boton"><button>load more</button></div>`;
+    }).join('') + `<div class="boton"><button onclick="popBoton()">load more</button></div>`;
+    })
+}
+
+const popBoton = () =>{
+
+    paginaActual ++;
+    
+    fetch (`${popular}&page=${paginaActual}`)
+    .then(res => res.json())
+    .then(movie => {
+
+        total.textContent= `${movie.total_results} results` 
+        const movies = movie.results;
+        const ul = document.querySelector(".verPelis")
+        titulo.textContent= 'Popular Movies';
+    
+        ul.innerHTML = movies.map(e=>{
+            return `<li class="pelis">
+            <div class="imagen"><img src="${dire}${e.poster_path}"/></div>
+            <div class="tituloPeli">${e.title}</div>
+            </li>`
+    }).join('') + `<div class="boton"><button onclick="popBoton()">load more</button></div>`;
     })
 }
 
 //Top Rated
 const topR = () =>{ 
+
+    siContenedor();
+    noPres();
+    borrarHome();
+    siContenedorPop();
+    noMenuH();
+
+    titulo.textContent= 'Top Rated';
+
+    paginaActual = 1;
+
+    fetch (`${topRated}&page=${paginaActual}`)
+    .then(res => res.json())
+    .then(movie => {
+
+        total.textContent= `${movie.total_results} results` 
+        const movies = movie.results;
+        const ul = document.querySelector(".verPelis")
+    
+        ul.innerHTML = movies.map(e=>{
+            return `<li class="pelis">
+            <div class="imagen"><img src="${dire}${e.poster_path}"/></div>
+            <div class="tituloPeli">${e.title}</div>
+            </li>`
+    }).join('') + `<div class="boton"><button onclick="popBoton()">load more</button></div>`;
+
+
+    const boton = document.createElement('button');
+    boton.textContent = 'load more';
+    boton.classList.add('boton')
+    contenedorPop.appendChild(boton);
+
+    
+    })
+}
+
+const topRBoton = () =>{
+
+    paginaActual ++;
 
     siContenedor();
     noPres();
@@ -162,20 +225,46 @@ const topR = () =>{
             <div class="imagen"><img src="${dire}${e.poster_path}"/></div>
             <div class="tituloPeli">${e.title}</div>
             </li>`
-    }).join('');
+        }).join('') + `<div class="boton"><button onclick="popBoton()">load more</button></div>`;
+
+    })
+}
 
 
-    const boton = document.createElement('button');
-    boton.textContent = 'load more';
-    boton.classList.add('boton')
-    contenedorPop.appendChild(boton);
+//Upcoming
+const upcom = () =>{ 
 
+    siContenedor();
+    noPres();
+    borrarHome();
+    siContenedorPop();
+    noMenuH();
+
+    titulo.textContent ='Upcoming';
+
+    paginaActual=1;
+
+    fetch (`${upcoming}&page=${paginaActual}`)
+    .then(res => res.json())
+    .then(movie => {
+
+        total.textContent= `${movie.total_results} results` 
+        const movies = movie.results;
+        const ul = document.querySelector(".verPelis")
+    
+        ul.innerHTML = movies.map(e=>{
+            return `<li class="pelis">
+            <div class="imagen"><img src="${dire}${e.poster_path}"/></div>
+            <div class="tituloPeli">${e.title}</div>
+            </li>`
+        }).join('') + `<div class="boton"><button onclick="upcomBoton()">load more</button></div>`;
     
     })
 }
 
-//Upcoming
-const upcom = () =>{ 
+const upcomBoton = () =>{ 
+
+    paginaActual++;
 
     siContenedor();
     noPres();
@@ -198,7 +287,7 @@ const upcom = () =>{
             <div class="imagen"><img src="${dire}${e.poster_path}"/></div>
             <div class="tituloPeli">${e.title}</div>
             </li>`
-    }).join('');
+        }).join('') + `<div class="boton"><button onclick="upcomBoton()">load more</button></div>`;
     
     })
 }
@@ -214,6 +303,7 @@ const nowp = () =>{
     
 
     titulo.textContent = 'Now Playing';
+    paginaActual=1;
 
     fetch (`${nowPlaying}&page=${paginaActual}`)
     .then(res => res.json())
@@ -228,7 +318,39 @@ const nowp = () =>{
             <div class="imagen"><img src="${dire}${e.poster_path}"/></div>
             <div class="tituloPeli">${e.title}</div>
             </li>`
-        }).join('');
+        }).join('') + `<div class="boton"><button onclick="upcomBoton()">load more</button></div>`;
+    
+    })
+}
+
+const upcomBoton = () =>{ 
+
+    paginaActual++;
+
+    siContenedor();
+    noMenuH();
+    noPres();
+    borrarHome();
+    siContenedorPop();
+    
+
+    titulo.textContent = 'Now Playing';
+    paginaActual=1;
+
+    fetch (`${nowPlaying}&page=${paginaActual}`)
+    .then(res => res.json())
+    .then(movie => {
+
+        total.textContent= `${movie.total_results} results` 
+        const movies = movie.results;
+        const ul = document.querySelector(".verPelis")
+    
+        ul.innerHTML = movies.map(e=>{
+            return `<li class="pelis">
+            <div class="imagen"><img src="${dire}${e.poster_path}"/></div>
+            <div class="tituloPeli">${e.title}</div>
+            </li>`
+        }).join('') + `<div class="boton"><button onclick="upcomBoton()">load more</button></div>`;
     
     })
 }
