@@ -318,12 +318,12 @@ const nowp = () =>{
             <div class="imagen"><img src="${dire}${e.poster_path}"/></div>
             <div class="tituloPeli">${e.title}</div>
             </li>`
-        }).join('') + `<div class="boton"><button onclick="upcomBoton()">load more</button></div>`;
+        }).join('') + `<div class="boton"><button onclick="nowpBoton()">load more</button></div>`;
     
     })
 }
 
-const upcomBoton = () =>{ 
+const nowpBoton = () =>{ 
 
     paginaActual++;
 
@@ -335,7 +335,6 @@ const upcomBoton = () =>{
     
 
     titulo.textContent = 'Now Playing';
-    paginaActual=1;
 
     fetch (`${nowPlaying}&page=${paginaActual}`)
     .then(res => res.json())
