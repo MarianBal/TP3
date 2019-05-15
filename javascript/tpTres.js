@@ -41,6 +41,8 @@ const nowPlaying =`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiK
 
 const dire = `https://image.tmdb.org/t/p/w370_and_h556_bestv2`
 
+
+
 //Home
 const ada = () => {
 
@@ -380,3 +382,10 @@ input.onkeyup = () =>{
             })
     })
 }
+
+//Modal
+
+const modal = document.querySelector('.modal')
+
+const cerrarModal =()=> modal.classList.add('noVisible');
+

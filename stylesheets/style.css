@@ -293,35 +293,171 @@ body .boton button:hover {
   background-color: #081c24;
   color: white;
 }
+/* line 271, ../sass/style.scss */
+body .modal {
+  width: 100%;
+  height: 100vh;
+  background-color: #081c24;
+  opacity: 0.98;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  overflow: auto;
+}
+/* line 282, ../sass/style.scss */
+body .modal .contenedorModal {
+  width: 768px;
+  height: 700px;
+  position: relative;
+  z-index: 5;
+  background-color: white;
+  margin: 40px auto;
+}
+/* line 290, ../sass/style.scss */
+body .modal .contenedorModal .modalEncabezado {
+  height: 350px;
+  background: url("../img/modal.jpg");
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+/* line 299, ../sass/style.scss */
+body .modal .contenedorModal .modalEncabezado:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background: #081c24;
+  opacity: 0.85;
+}
+/* line 312, ../sass/style.scss */
+body .modal .contenedorModal .modalInformacion {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+/* line 317, ../sass/style.scss */
+body .modal .contenedorModal .cerrar {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+/* line 326, ../sass/style.scss */
+body .modal .contenedorModal .cerrar svg {
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+/* line 334, ../sass/style.scss */
+body .modal .contenedorModal .cerrar:hover {
+  background-color: #bc3b69;
+}
+/* line 338, ../sass/style.scss */
+body .modal .contenedorModal .contenedorModalInfo {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+/* line 347, ../sass/style.scss */
+body .modal .contenedorModal .contenedorModalInfo .modalPoster {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+/* line 352, ../sass/style.scss */
+body .modal .contenedorModal .contenedorModalInfo .modalPoster img {
+  width: 300px;
+  margin-top: 40px;
+}
+/* line 358, ../sass/style.scss */
+body .modal .contenedorModal .contenedorModalInfo .modalInformacionPeli {
+  width: 50%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+/* line 363, ../sass/style.scss */
+body .modal .contenedorModal .contenedorModalInfo .modalInformacionPeli h4 {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #bc3b69;
+  margin: 0;
+}
+/* line 371, ../sass/style.scss */
+body .modal .contenedorModal .contenedorModalInfo .modalInformacionPeli p {
+  font-size: 14px;
+  font-weight: 300;
+  color: white;
+  margin-top: 10px;
+}
+/* line 378, ../sass/style.scss */
+body .modal .contenedorModal .contenedorModalInfo .modalInformacionPeli span {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  position: absolute;
+  top: 380px;
+  color: #081c24;
+  padding-right: 40px;
+  box-sizing: border-box;
+}
 
 @media screen and (max-width: 768px) {
-  /* line 276, ../sass/style.scss */
+  /* line 399, ../sass/style.scss */
   body nav {
     height: 50px;
   }
-  /* line 279, ../sass/style.scss */
+  /* line 402, ../sass/style.scss */
   body nav #logo {
     width: 55px;
     height: 50px;
     margin-right: 2%;
   }
-  /* line 284, ../sass/style.scss */
+  /* line 407, ../sass/style.scss */
   body nav #logo #capa_1 {
     width: 35px;
     height: 31px;
   }
-  /* line 290, ../sass/style.scss */
+  /* line 413, ../sass/style.scss */
   body nav .buscador {
     width: 75%;
     height: 50px;
     margin-right: 1%;
   }
-  /* line 295, ../sass/style.scss */
+  /* line 418, ../sass/style.scss */
   body nav .buscador svg {
     width: 14px;
     height: 14px;
   }
-  /* line 300, ../sass/style.scss */
+  /* line 423, ../sass/style.scss */
   body nav .buscador input {
     width: 60%;
     font-weight: 300;
@@ -330,13 +466,13 @@ body .boton button:hover {
     box-sizing: border-box;
     margin-left: 15px;
   }
-  /* line 310, ../sass/style.scss */
+  /* line 433, ../sass/style.scss */
   body nav #hamburguesa {
     display: inline !important;
     margin-right: 2%;
     cursor: pointer;
   }
-  /* line 317, ../sass/style.scss */
+  /* line 440, ../sass/style.scss */
   body .contenedor {
     width: 100%;
     display: flex;
@@ -344,54 +480,54 @@ body .boton button:hover {
     justify-content: flex-start;
     align-items: flex-start;
   }
-  /* line 321, ../sass/style.scss */
+  /* line 444, ../sass/style.scss */
   body .contenedor ul {
     display: none;
   }
-  /* line 328, ../sass/style.scss */
+  /* line 451, ../sass/style.scss */
   body .contenedorVertical .presentacion {
     height: 200px;
   }
-  /* line 331, ../sass/style.scss */
+  /* line 454, ../sass/style.scss */
   body .contenedorVertical .presentacion .opacidad {
     height: 200px;
   }
-  /* line 335, ../sass/style.scss */
+  /* line 458, ../sass/style.scss */
   body .contenedorVertical .presentacion .texto {
     height: 200px;
   }
-  /* line 338, ../sass/style.scss */
+  /* line 461, ../sass/style.scss */
   body .contenedorVertical .presentacion .texto h1 {
     font-size: 22px;
   }
-  /* line 344, ../sass/style.scss */
+  /* line 467, ../sass/style.scss */
   body .contenedorVertical .contenedorPeliculas {
     padding: 10px;
   }
-  /* line 347, ../sass/style.scss */
+  /* line 470, ../sass/style.scss */
   body .contenedorVertical .contenedorPeliculas nav {
     padding: 20px 10px;
   }
-  /* line 350, ../sass/style.scss */
+  /* line 473, ../sass/style.scss */
   body .contenedorVertical .contenedorPeliculas nav h2 {
     font-size: 16px;
   }
-  /* line 356, ../sass/style.scss */
+  /* line 479, ../sass/style.scss */
   body .contenedorVertical .contenedorPeliculas ul .pelis {
     width: 50%;
     height: 100%;
   }
-  /* line 360, ../sass/style.scss */
+  /* line 483, ../sass/style.scss */
   body .contenedorVertical .contenedorPeliculas ul .pelis .tituloPeli {
     width: 100%;
     font-size: 12px;
     text-align: left;
   }
-  /* line 367, ../sass/style.scss */
+  /* line 490, ../sass/style.scss */
   body .contenedorVertical .contenedorPeliculas ul .quinta {
     display: none;
   }
-  /* line 374, ../sass/style.scss */
+  /* line 497, ../sass/style.scss */
   body .menuH {
     width: 100%;
     height: 80vh;
@@ -405,7 +541,7 @@ body .boton button:hover {
     margin: 0;
     padding: 0;
   }
-  /* line 384, ../sass/style.scss */
+  /* line 507, ../sass/style.scss */
   body .menuH .menuHamb {
     width: 50%;
     height: 50%;
@@ -415,19 +551,19 @@ body .boton button:hover {
     align-items: center;
     cursor: pointer;
   }
-  /* line 390, ../sass/style.scss */
+  /* line 513, ../sass/style.scss */
   body .menuH .menuHamb svg {
     width: 20px;
     height: 20px;
     color: white;
     margin-bottom: 3px;
   }
-  /* line 397, ../sass/style.scss */
+  /* line 520, ../sass/style.scss */
   body .menuH .menuHamb p {
     margin-bottom: 10px;
   }
 }
-/* line 406, ../sass/style.scss */
+/* line 529, ../sass/style.scss */
 .noVisible {
   display: none !important;
 }

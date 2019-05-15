@@ -49,7 +49,7 @@ body{
                 }
 
                 li:hover{
-                    color:$boton;
+                    color:$oscuro;
                 }
             }
             
@@ -255,16 +255,139 @@ body{
             width:95px;
             height: 36px;
             border: 1px solid;
-            border-color: $boton;
-            color:$boton;
+            border-color: $oscuro;
+            color:$oscuro;
             @include flexbox(row, center, center);
             text-transform:uppercase;
             cursor:pointer;
         }
 
         button:hover{
-            background-color: $boton;
+            background-color: $oscuro;
             color:$fondo;
+        }
+    }
+
+    .modal{
+        width:100%;
+        height:100vh;
+        background-color:$oscuro;
+        opacity: 0.98;
+        position:fixed;
+        top:0;
+        left:0;
+        z-index:2;
+        overflow: auto;
+
+        .contenedorModal{
+            width: 768px;
+            height: 700px;
+            position: relative;
+            z-index: 5;
+            background-color:$fondo;
+            margin: 40px auto;
+
+            .modalEncabezado{
+                height: 350px;
+                background: url("../img/modal.jpg");
+                position: relative;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;       
+            }
+
+            .modalEncabezado:before{
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 0;
+                width: 100%;
+                height: 100%;
+                background:$oscuro;
+                opacity: 0.85;    
+            }
+
+            .modalInformacion{
+                @include flexbox(row, flex-start, flex-start);
+                flex-wrap: wrap;  
+            }
+
+            .cerrar{
+                width:40px;
+                height: 40px;
+                @include flexbox(row, center, center);
+                position:absolute;
+                top:0;
+                right:0;
+                cursor:pointer;
+
+                svg{
+                    width:20px;
+                    height: 20px;
+                    color:$fondo;
+
+                }
+            }
+
+            .cerrar:hover{
+                background-color: $logo;
+            }
+
+            .contenedorModalInfo{
+                width:100%;
+                height:100%;
+                position:absolute;
+                top:0;
+                left:0;
+                @include flexbox(row, center, center);
+                @include borderBox();
+
+                .modalPoster{
+                    width:50%;
+                    height: 100%;
+                    @include flexbox(row, center, flex-start);
+
+                    img{
+                        width:300px;
+                        margin-top: 40px;
+                    }
+                }
+
+                .modalInformacionPeli{
+                    width:50%;
+                    height: 60%;
+                    @include flexbox(column, flex-start, flex-start);
+
+                    h4{
+                        font-size: 30px;
+                        font-weight: 500;
+                        line-height: 1.4;
+                        color:$logo;
+                        margin:0;
+                    }
+
+                    p{
+                        font-size: 14px;
+                        font-weight: 300;
+                        color: $fondo;
+                        margin-top: 10px;
+                    }
+
+                    span{
+                        font-size: 14px;
+                        font-weight: 300;
+                        line-height: 1.8;
+                        position:absolute;
+                        top:380px;
+                        color:$oscuro;
+                        padding-right: 40px;
+                        @include borderBox();
+                    }
+                    
+                }
+            }    
         }
     }
 }
