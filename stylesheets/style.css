@@ -250,10 +250,11 @@ body .contenedorVertical .contenedorPeliculas ul .pelis {
   justify-content: space-between;
   align-items: center;
 }
-/* line 229, ../sass/style.scss */
+/* line 228, ../sass/style.scss */
 body .contenedorVertical .contenedorPeliculas ul .pelis .imagen img {
   width: 100%;
   height: auto;
+  cursor: pointer;
 }
 /* line 235, ../sass/style.scss */
 body .contenedorVertical .contenedorPeliculas ul .pelis .tituloPeli {

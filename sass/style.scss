@@ -222,13 +222,13 @@ body{
                     background-color: $contenedor;
                     @include borderBox();
                     @include flexbox(column, space-between, center);
-
                     
                     .imagen{
 
                         img{
                         width:100%;
                         height:auto;
+                        cursor: pointer;
                         }
                     }
 

@@ -10,6 +10,8 @@ const titulo = document.querySelector(".titulo");
 const pelis = document.getElementsByClassName('pelis');
 const menuH = document.querySelector('.menuH');
 const input = document.querySelector('input');
+const modal = document.querySelector('.modal')
+const body = document.querySelector('body');
 
 //funciones
 const noPop = () =>contenedorPop.classList.add('noVisible');
@@ -31,6 +33,58 @@ const menuHamburguesa = () =>{
     noContenedor();
 }
 
+//Modal
+const crearModal = e => {
+    const div = document.createElement('div');
+    div.style = "display:none";
+    const estilo = () => div.classList.add('modal');
+    div.setAttribute('id', e.id);
+
+    estilo();
+
+    div.innerHTML = `
+    <div class="contenedorModal">
+                <div class="modalEncabezado" style="background-image: url("${e.dire}${e.backdrop_path}")></div>
+                <div class="modalInformacion"></div>
+                <div class="contenedorModalInfo">
+                    <div class="modalPoster">
+                        <img src="${dire}${e.poster_path}"/>
+                    </div>
+                    <div class="modalInformacionPeli">
+                        <h4>${e.title}</h4>
+                        <p>Part of the journey is the end.</p>
+                        <span>${e.overview}</span>
+                    </div>
+                </div>
+
+                <div class="cerrar" onclick= "cerrarModal(${e.id})">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" 
+                    data-icon="times" class="svg-inline--fa fa-times fa-w-11" 
+                    role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512">
+                    <path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 
+                    12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 
+                    75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19
+                     0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 
+                     12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 
+                     0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
+                </div>
+            </div> `
+
+    body.appendChild(div);
+}
+
+const verModal = e =>{
+    const modalVer = document.getElementById(e);
+    modalVer.style = "display:block"
+
+}
+
+const cerrarModal = e =>{
+    const modalVer = document.getElementById(e);
+    modalVer.style = "display:none"
+
+}
+
 //Api
 const apiKey= `8bdfee1cadeaa7c6f8c489f17f927c3d`;
 let paginaActual = 1;
@@ -40,7 +94,6 @@ const upcoming = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&
 const nowPlaying =`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=${paginaActual}`
 
 const dire = `https://image.tmdb.org/t/p/w370_and_h556_bestv2`
-
 
 
 //Home
@@ -133,13 +186,16 @@ const pop = () =>{
         const movies = movie.results;
         const ul = document.querySelector(".verPelis")
         titulo.textContent= 'Popular Movies';
+
+        movies.map(e=>crearModal(e));
     
         ul.innerHTML = movies.map(e=>{
             return `<li class="pelis">
-            <div class="imagen"><img src="${dire}${e.poster_path}"/></div>
-            <div class="tituloPeli">${e.title}</div>
+            <div class="imagen" onclick="verModal(${e.id})"><img src="${dire}${e.poster_path}"/></div>
+            <div class="tituloPeli"  onclick="verModal(${e.id})">${e.title}</div>
             </li>`
     }).join('') + `<div class="boton"><button onclick="popBoton()">load more</button></div>`;
+
     })
 }
 
@@ -155,11 +211,13 @@ const popBoton = () =>{
         const movies = movie.results;
         const ul = document.querySelector(".verPelis")
         titulo.textContent= 'Popular Movies';
+
+        movies.map(e=>crearModal(e));
     
         ul.innerHTML = movies.map(e=>{
             return `<li class="pelis">
-            <div class="imagen"><img src="${dire}${e.poster_path}"/></div>
-            <div class="tituloPeli">${e.title}</div>
+            <div class="imagen"  onclick="verModal(${e.id})"><img src="${dire}${e.poster_path}"/></div>
+            <div class="tituloPeli" onclick="verModal(${e.id})">${e.title}</div>
             </li>`
     }).join('') + `<div class="boton"><button onclick="popBoton()">load more</button></div>`;
     })
@@ -175,6 +233,7 @@ const topR = () =>{
     noMenuH();
 
     titulo.textContent= 'Top Rated';
+    
 
     paginaActual = 1;
 
@@ -185,11 +244,14 @@ const topR = () =>{
         total.textContent= `${movie.total_results} results` 
         const movies = movie.results;
         const ul = document.querySelector(".verPelis")
+
+        movies.map(e=>crearModal(e));
+
     
         ul.innerHTML = movies.map(e=>{
             return `<li class="pelis">
-            <div class="imagen"><img src="${dire}${e.poster_path}"/></div>
-            <div class="tituloPeli">${e.title}</div>
+            <div class="imagen"  onclick="verModal(${e.id})"><img src="${dire}${e.poster_path}"/></div>
+            <div class="tituloPeli"  onclick="verModal(${e.id})">${e.title}</div>
             </li>`
     }).join('') + `<div class="boton"><button onclick="popBoton()">load more</button></div>`;
 
@@ -222,11 +284,14 @@ const topRBoton = () =>{
         total.textContent= `${movie.total_results} results` 
         const movies = movie.results;
         const ul = document.querySelector(".verPelis")
+
+        movies.map(e=>crearModal(e));
+
     
         ul.innerHTML = movies.map(e=>{
             return `<li class="pelis">
-            <div class="imagen"><img src="${dire}${e.poster_path}"/></div>
-            <div class="tituloPeli">${e.title}</div>
+            <div class="imagen"  onclick="verModal(${e.id})"><img src="${dire}${e.poster_path}"/></div>
+            <div class="tituloPeli"  onclick="verModal(${e.id})">${e.title}</div>
             </li>`
         }).join('') + `<div class="boton"><button onclick="popBoton()">load more</button></div>`;
 
@@ -254,11 +319,13 @@ const upcom = () =>{
         total.textContent= `${movie.total_results} results` 
         const movies = movie.results;
         const ul = document.querySelector(".verPelis")
+
+        movies.map(e=>crearModal(e));
     
         ul.innerHTML = movies.map(e=>{
             return `<li class="pelis">
-            <div class="imagen"><img src="${dire}${e.poster_path}"/></div>
-            <div class="tituloPeli">${e.title}</div>
+            <div class="imagen"  onclick="verModal(${e.id})"><img src="${dire}${e.poster_path}"/></div>
+            <div class="tituloPeli"  onclick="verModal(${e.id})">${e.title}</div>
             </li>`
         }).join('') + `<div class="boton"><button onclick="upcomBoton()">load more</button></div>`;
     
@@ -284,11 +351,13 @@ const upcomBoton = () =>{
         total.textContent= `${movie.total_results} results` 
         const movies = movie.results;
         const ul = document.querySelector(".verPelis")
+
+        movies.map(e=>crearModal(e));
     
         ul.innerHTML = movies.map(e=>{
             return `<li class="pelis">
-            <div class="imagen"><img src="${dire}${e.poster_path}"/></div>
-            <div class="tituloPeli">${e.title}</div>
+            <div class="imagen" onclick="verModal(${e.id})"><img src="${dire}${e.poster_path}"/></div>
+            <div class="tituloPeli" onclick="verModal(${e.id})">${e.title}</div>
             </li>`
         }).join('') + `<div class="boton"><button onclick="upcomBoton()">load more</button></div>`;
     
@@ -315,11 +384,13 @@ const nowp = () =>{
         total.textContent= `${movie.total_results} results` 
         const movies = movie.results;
         const ul = document.querySelector(".verPelis")
+
+        movies.map(e=>crearModal(e));
     
         ul.innerHTML = movies.map(e=>{
             return `<li class="pelis">
-            <div class="imagen"><img src="${dire}${e.poster_path}"/></div>
-            <div class="tituloPeli">${e.title}</div>
+            <div class="imagen" onclick="verModal(${e.id})"><img src="${dire}${e.poster_path}"/></div>
+            <div class="tituloPeli" onclick="verModal(${e.id})">${e.title}</div>
             </li>`
         }).join('') + `<div class="boton"><button onclick="nowpBoton()">load more</button></div>`;
     
@@ -347,10 +418,12 @@ const nowpBoton = () =>{
         const movies = movie.results;
         const ul = document.querySelector(".verPelis")
     
+        movies.map(e=>crearModal(e));
+
         ul.innerHTML = movies.map(e=>{
             return `<li class="pelis">
-            <div class="imagen"><img src="${dire}${e.poster_path}"/></div>
-            <div class="tituloPeli">${e.title}</div>
+            <div class="imagen" onclick="verModal(${e.id})"><img src="${dire}${e.poster_path}"/></div>
+            <div class="tituloPeli" onclick="verModal(${e.id})">${e.title}</div>
             </li>`
         }).join('') + `<div class="boton"><button onclick="upcomBoton()">load more</button></div>`;
     
@@ -368,7 +441,9 @@ input.onkeyup = () =>{
         const movies = data.results;
         const ul = document.getElementById('resultados');
 
-        ul.innerHTML = movies.map(movie => `<li class="lista">${movie.title}</li>`).join('');
+        movies.map(e=>crearModal(e));
+
+        ul.innerHTML = movies.map(movie => `<li class="lista" onclick="verModal(${movie.id})">${movie.title}</li>`).join('');
 
         ul.style.display = 'block';
 
@@ -379,13 +454,14 @@ input.onkeyup = () =>{
                input.value = e.target.innerHTML;
                ul.style.display = 'none';
                })
+               
             })
     })
 }
 
-//Modal
 
-const modal = document.querySelector('.modal')
 
-const cerrarModal =()=> modal.classList.add('noVisible');
+
+
+
 
