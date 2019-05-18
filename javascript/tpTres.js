@@ -107,14 +107,14 @@ const ada = () => {
     
     let j=0;
 
-    fetch (`${popular}&page=${paginaActual}`)
+    fetch (popular)
         .then(res => res.json())
         .then(movie => {
 
             for (let i=0; i<5; i++){
                 
-                pelis[j].innerHTML = `<div class="imagen"><img src="${dire}${movie.results[i].poster_path}"/></div>
-                                    <div class="tituloPeli">${movie.results[i].title}</div>`
+                pelis[j].innerHTML = `<div class="imagen" onclick="verModal(${movie.results[i].id})"><img src="${dire}${movie.results[i].poster_path}"/></div>
+                                    <div class="tituloPeli" onclick="verModal(${movie.results[i].id})">${movie.results[i].title}</div>`
 
                 j++
             }
@@ -127,8 +127,8 @@ const ada = () => {
 
             for (let i=0; i<5; i++){
                 
-                pelis[j].innerHTML = `<div class="imagen"><img src="${dire}${movie.results[i].poster_path}"/></div>
-                                    <div class="tituloPeli">${movie.results[i].title}</div>`
+                pelis[j].innerHTML = `<div class="imagen" onclick="verModal(${movie.results[i].id})"><img src="${dire}${movie.results[i].poster_path}"/></div>
+                                    <div class="tituloPeli" onclick="verModal(${movie.results[i].id})">${movie.results[i].title}</div>`
 
                 j++
             } 
@@ -140,8 +140,8 @@ const ada = () => {
 
             for (let i=0; i<5; i++){
                 
-                pelis[j].innerHTML = `<div class="imagen"><img src="${dire}${movie.results[i].poster_path}"/></div>
-                                    <div class="tituloPeli">${movie.results[i].title}</div>`
+                pelis[j].innerHTML = `<div class="imagen" onclick="verModal(${movie.results[i].id})"><img src="${dire}${movie.results[i].poster_path}"/></div>
+                                    <div class="tituloPeli" onclick="verModal(${movie.results[i].id})">${movie.results[i].title}</div>`
                 
                 j++
             }
@@ -153,8 +153,8 @@ const ada = () => {
 
             for (let i=0; i<5; i++){
                 
-                pelis[j].innerHTML = `<div class="imagen"><img src="${dire}${movie.results[i].poster_path}"/></div>
-                                    <div class="tituloPeli">${movie.results[i].title}</div>`
+                pelis[j].innerHTML = `<div class="imagen" onclick="verModal(${movie.results[i].id})"><img src="${dire}${movie.results[i].poster_path}"/></div>
+                                    <div class="tituloPeli"onclick="verModal(${movie.results[i].id})">${movie.results[i].title}</div>`
 
                 j++
             }
@@ -192,7 +192,7 @@ const pop = () =>{
         ul.innerHTML = movies.map(e=>{
             return `<li class="pelis">
             <div class="imagen" onclick="verModal(${e.id})"><img src="${dire}${e.poster_path}"/></div>
-            <div class="tituloPeli"  onclick="verModal(${e.id})">${e.title}</div>
+            <div class="tituloPeli" onclick="verModal(${e.id})">${e.title}</div>
             </li>`
     }).join('') + `<div class="boton"><button onclick="popBoton()">load more</button></div>`;
 
