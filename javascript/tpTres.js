@@ -39,12 +39,13 @@ const crearModal = e => {
     div.style = "display:none";
     const estilo = () => div.classList.add('modal');
     div.setAttribute('id', e.id);
+    const back ='https://image.tmdb.org/t/p/w500';
 
     estilo();
 
     div.innerHTML = `
     <div class="contenedorModal">
-                <div class="modalEncabezado" style="background-image: url("${e.dire}${e.backdrop_path}")></div>
+                <div class="modalEncabezado" style="background-image: url("${back}${e.backdrop_path}")></div>
                 <div class="modalInformacion"></div>
                 <div class="contenedorModalInfo">
                     <div class="modalPoster">
@@ -56,7 +57,6 @@ const crearModal = e => {
                         <span>${e.overview}</span>
                     </div>
                 </div>
-
                 <div class="cerrar" onclick= "cerrarModal(${e.id})">
                     <svg aria-hidden="true" focusable="false" data-prefix="fas" 
                     data-icon="times" class="svg-inline--fa fa-times fa-w-11" 
@@ -69,22 +69,16 @@ const crearModal = e => {
                      0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
                 </div>
             </div> `
-
     body.appendChild(div);
 }
-
 const verModal = e =>{
     const modalVer = document.getElementById(e);
     modalVer.style = "display:block"
-
 }
-
 const cerrarModal = e =>{
     const modalVer = document.getElementById(e);
     modalVer.style = "display:none"
-
 }
-
 //Api
 const apiKey= `8bdfee1cadeaa7c6f8c489f17f927c3d`;
 let paginaActual = 1;
@@ -92,13 +86,12 @@ const popular =`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&pag
 const topRated = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&page=${paginaActual}`
 const upcoming = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&page=${paginaActual}`
 const nowPlaying =`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=${paginaActual}`
+const dire = `https://image.tmdb.org/t/p/w370_and_h556_bestv2`;
 
-const dire = `https://image.tmdb.org/t/p/w370_and_h556_bestv2`
 
 
 //Home
 const ada = () => {
-
     siContenedor();
     noPop();
     siPres();
@@ -106,39 +99,36 @@ const ada = () => {
     noMenuH();
     
     let j=0;
-
-    fetch (popular)
+    fetch (`${popular}&page=${paginaActual}`)
         .then(res => res.json())
         .then(movie => {
-
             for (let i=0; i<5; i++){
+
+                crearModal(movie.results[i]);
                 
                 pelis[j].innerHTML = `<div class="imagen" onclick="verModal(${movie.results[i].id})"><img src="${dire}${movie.results[i].poster_path}"/></div>
                                     <div class="tituloPeli" onclick="verModal(${movie.results[i].id})">${movie.results[i].title}</div>`
-
                 j++
             }
         })
-
     fetch (topRated)
         .then(res => res.json())
         .then(movie => {
-
-
             for (let i=0; i<5; i++){
+
+                crearModal(movie.results[i]);
                 
                 pelis[j].innerHTML = `<div class="imagen" onclick="verModal(${movie.results[i].id})"><img src="${dire}${movie.results[i].poster_path}"/></div>
                                     <div class="tituloPeli" onclick="verModal(${movie.results[i].id})">${movie.results[i].title}</div>`
-
                 j++
             } 
         })
-
     fetch (upcoming)
         .then(res => res.json())
         .then(movie => {
-
             for (let i=0; i<5; i++){
+
+                crearModal(movie.results[i]);
                 
                 pelis[j].innerHTML = `<div class="imagen" onclick="verModal(${movie.results[i].id})"><img src="${dire}${movie.results[i].poster_path}"/></div>
                                     <div class="tituloPeli" onclick="verModal(${movie.results[i].id})">${movie.results[i].title}</div>`
@@ -146,72 +136,59 @@ const ada = () => {
                 j++
             }
         })
-
         fetch (nowPlaying)
         .then(res => res.json())
         .then(movie => {
-
             for (let i=0; i<5; i++){
+
+                crearModal(movie.results[i]);
                 
                 pelis[j].innerHTML = `<div class="imagen" onclick="verModal(${movie.results[i].id})"><img src="${dire}${movie.results[i].poster_path}"/></div>
-                                    <div class="tituloPeli"onclick="verModal(${movie.results[i].id})">${movie.results[i].title}</div>`
-
+                                    <div class="tituloPeli" onclick="verModal(${movie.results[i].id})">${movie.results[i].title}</div>`
                 j++
             }
         })
 }
-
 //Categorías
 const popularBoton =document.getElementsByClassName('categorias')[0];
 const topRatedBoton = document.getElementsByClassName('categorias')[1];
 const upcomingBoton = document.getElementsByClassName('categorias')[2];
 const nowPlayingBoton = document.getElementsByClassName('categorias')[3];
-
 //popular
 const pop = () =>{ 
-
     siContenedor();
     noPres();
     borrarHome();
     siContenedorPop();
     noMenuH();
-
     paginaActual = 1;
-
     fetch (`${popular}&page=${paginaActual}`)
     .then(res => res.json())
     .then(movie => {
-
         total.textContent= `${movie.total_results} results` 
         const movies = movie.results;
         const ul = document.querySelector(".verPelis")
         titulo.textContent= 'Popular Movies';
-
         movies.map(e=>crearModal(e));
     
         ul.innerHTML = movies.map(e=>{
             return `<li class="pelis">
             <div class="imagen" onclick="verModal(${e.id})"><img src="${dire}${e.poster_path}"/></div>
-            <div class="tituloPeli" onclick="verModal(${e.id})">${e.title}</div>
+            <div class="tituloPeli"  onclick="verModal(${e.id})">${e.title}</div>
             </li>`
     }).join('') + `<div class="boton"><button onclick="popBoton()">load more</button></div>`;
-
     })
 }
-
 const popBoton = () =>{
-
     paginaActual ++;
     
     fetch (`${popular}&page=${paginaActual}`)
     .then(res => res.json())
     .then(movie => {
-
         total.textContent= `${movie.total_results} results` 
         const movies = movie.results;
         const ul = document.querySelector(".verPelis")
         titulo.textContent= 'Popular Movies';
-
         movies.map(e=>crearModal(e));
     
         ul.innerHTML = movies.map(e=>{
@@ -222,31 +199,23 @@ const popBoton = () =>{
     }).join('') + `<div class="boton"><button onclick="popBoton()">load more</button></div>`;
     })
 }
-
 //Top Rated
 const topR = () =>{ 
-
     siContenedor();
     noPres();
     borrarHome();
     siContenedorPop();
     noMenuH();
-
     titulo.textContent= 'Top Rated';
     
-
     paginaActual = 1;
-
     fetch (`${topRated}&page=${paginaActual}`)
     .then(res => res.json())
     .then(movie => {
-
         total.textContent= `${movie.total_results} results` 
         const movies = movie.results;
         const ul = document.querySelector(".verPelis")
-
         movies.map(e=>crearModal(e));
-
     
         ul.innerHTML = movies.map(e=>{
             return `<li class="pelis">
@@ -254,39 +223,28 @@ const topR = () =>{
             <div class="tituloPeli"  onclick="verModal(${e.id})">${e.title}</div>
             </li>`
     }).join('') + `<div class="boton"><button onclick="popBoton()">load more</button></div>`;
-
-
     const boton = document.createElement('button');
     boton.textContent = 'load more';
     boton.classList.add('boton')
     contenedorPop.appendChild(boton);
-
     
     })
 }
-
 const topRBoton = () =>{
-
     paginaActual ++;
-
     siContenedor();
     noPres();
     borrarHome();
     siContenedorPop();
     noMenuH();
-
     titulo.textContent= 'Top Rated';
-
     fetch (`${topRated}&page=${paginaActual}`)
     .then(res => res.json())
     .then(movie => {
-
         total.textContent= `${movie.total_results} results` 
         const movies = movie.results;
         const ul = document.querySelector(".verPelis")
-
         movies.map(e=>crearModal(e));
-
     
         ul.innerHTML = movies.map(e=>{
             return `<li class="pelis">
@@ -294,32 +252,23 @@ const topRBoton = () =>{
             <div class="tituloPeli"  onclick="verModal(${e.id})">${e.title}</div>
             </li>`
         }).join('') + `<div class="boton"><button onclick="popBoton()">load more</button></div>`;
-
     })
 }
-
-
 //Upcoming
 const upcom = () =>{ 
-
     siContenedor();
     noPres();
     borrarHome();
     siContenedorPop();
     noMenuH();
-
     titulo.textContent ='Upcoming';
-
     paginaActual=1;
-
     fetch (`${upcoming}&page=${paginaActual}`)
     .then(res => res.json())
     .then(movie => {
-
         total.textContent= `${movie.total_results} results` 
         const movies = movie.results;
         const ul = document.querySelector(".verPelis")
-
         movies.map(e=>crearModal(e));
     
         ul.innerHTML = movies.map(e=>{
@@ -331,27 +280,20 @@ const upcom = () =>{
     
     })
 }
-
 const upcomBoton = () =>{ 
-
     paginaActual++;
-
     siContenedor();
     noPres();
     borrarHome();
     siContenedorPop();
     noMenuH();
-
     titulo.textContent ='Upcoming';
-
     fetch (`${upcoming}&page=${paginaActual}`)
     .then(res => res.json())
     .then(movie => {
-
         total.textContent= `${movie.total_results} results` 
         const movies = movie.results;
         const ul = document.querySelector(".verPelis")
-
         movies.map(e=>crearModal(e));
     
         ul.innerHTML = movies.map(e=>{
@@ -363,28 +305,22 @@ const upcomBoton = () =>{
     
     })
 }
-
 //now playing
 const nowp = () =>{ 
-
     siContenedor();
     noMenuH();
     noPres();
     borrarHome();
     siContenedorPop();
     
-
     titulo.textContent = 'Now Playing';
     paginaActual=1;
-
     fetch (`${nowPlaying}&page=${paginaActual}`)
     .then(res => res.json())
     .then(movie => {
-
         total.textContent= `${movie.total_results} results` 
         const movies = movie.results;
         const ul = document.querySelector(".verPelis")
-
         movies.map(e=>crearModal(e));
     
         ul.innerHTML = movies.map(e=>{
@@ -396,30 +332,23 @@ const nowp = () =>{
     
     })
 }
-
 const nowpBoton = () =>{ 
-
     paginaActual++;
-
     siContenedor();
     noMenuH();
     noPres();
     borrarHome();
     siContenedorPop();
     
-
     titulo.textContent = 'Now Playing';
-
     fetch (`${nowPlaying}&page=${paginaActual}`)
     .then(res => res.json())
     .then(movie => {
-
         total.textContent= `${movie.total_results} results` 
         const movies = movie.results;
         const ul = document.querySelector(".verPelis")
     
         movies.map(e=>crearModal(e));
-
         ul.innerHTML = movies.map(e=>{
             return `<li class="pelis">
             <div class="imagen" onclick="verModal(${e.id})"><img src="${dire}${e.poster_path}"/></div>
@@ -429,24 +358,17 @@ const nowpBoton = () =>{
     
     })
 }
-
 input.onkeyup = () =>{
     const q = input.value;
     const url = `https://api.themoviedb.org/3/search/movie?api_key=a70dbfe19b800809dfdd3e89e8532c9e&query=${q}`;
-
     fetch(url)
     .then(res =>res.json())
     .then(data => {
-
         const movies = data.results;
         const ul = document.getElementById('resultados');
-
         movies.map(e=>crearModal(e));
-
         ul.innerHTML = movies.map(movie => `<li class="lista" onclick="verModal(${movie.id})">${movie.title}</li>`).join('');
-
         ul.style.display = 'block';
-
         document
             .querySelectorAll('lista')
             .forEach(function (li) {
@@ -458,10 +380,3 @@ input.onkeyup = () =>{
             })
     })
 }
-
-
-
-
-
-
-

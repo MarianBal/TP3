@@ -288,7 +288,6 @@ body{
 
             .modalEncabezado{
                 height: 350px;
-                background: url("../img/modal.jpg");
                 position: relative;
                 background-size: cover;
                 background-repeat: no-repeat;
@@ -358,6 +357,8 @@ body{
                 .modalInformacionPeli{
                     width:50%;
                     height: 60%;
+                    padding-right: 30px;
+                    @include borderBox();
                     @include flexbox(column, flex-start, flex-start);
 
                     h4{
