@@ -47,7 +47,7 @@ const crearModal = e =>{
             div.setAttribute('id', e.id);
             const estilo = () => div.classList.add('modal');
             div.style = "display:none";
-            const back ='https://image.tmdb.org/t/p/w500';
+            const back =`https://image.tmdb.org/t/p/w500`;
             const genres = movie.genres.map(e=>e.name).join(',')
 
             estilo();
