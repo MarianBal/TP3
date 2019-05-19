@@ -34,43 +34,59 @@ const menuHamburguesa = () =>{
 }
 
 //Modal
-const crearModal = e => {
-    const div = document.createElement('div');
-    div.style = "display:none";
-    const estilo = () => div.classList.add('modal');
-    div.setAttribute('id', e.id);
-    const back ='https://image.tmdb.org/t/p/w500';
 
-    estilo();
+const crearModal = e =>{
+    const peliculaId = e.id;
+    const buscarPeli = `https://api.themoviedb.org/3/movie/${peliculaId}?api_key=${apiKey}`
 
-    div.innerHTML = `
-    <div class="contenedorModal">
-                <div class="modalEncabezado" style="background-image: url("${back}${e.backdrop_path}")></div>
-                <div class="modalInformacion"></div>
-                <div class="contenedorModalInfo">
-                    <div class="modalPoster">
-                        <img src="${dire}${e.poster_path}"/>
-                    </div>
-                    <div class="modalInformacionPeli">
-                        <h4>${e.title}</h4>
-                        <p>Part of the journey is the end.</p>
-                        <span>${e.overview}</span>
-                    </div>
+    fetch (buscarPeli)
+        .then(res => res.json())
+        .then(movie => { 
+
+            const div = document.createElement('div');
+            div.setAttribute('id', e.id);
+            const estilo = () => div.classList.add('modal');
+            div.style = "display:none";
+            const back ='https://image.tmdb.org/t/p/w500';
+            const genres = movie.genres.map(e=>e.name).join(',')
+
+            estilo();
+
+            div.innerHTML = `<div class="contenedorModal">
+            <div class="modalEncabezado" style="background-image: url("${back}${movie.backdrop_path}")></div>
+            <div class="modalInformacion"></div>
+            <div class="contenedorModalInfo">
+                <div class="modalPoster">
+                    <img src="${dire}${movie.poster_path}"/>
                 </div>
-                <div class="cerrar" onclick= "cerrarModal(${e.id})">
-                    <svg aria-hidden="true" focusable="false" data-prefix="fas" 
-                    data-icon="times" class="svg-inline--fa fa-times fa-w-11" 
-                    role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512">
-                    <path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 
-                    12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 
-                    75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19
-                     0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 
-                     12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 
-                     0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
+                <div class="modalInformacionPeli">
+                    <h4>${movie.original_title}</h4>
+                    <p>${movie.tagline}</p>
+                    <span>${movie.overview}</span>
+                    <h4>genre</h4>
+                    <span>${genres}</span>
                 </div>
-            </div> `
-    body.appendChild(div);
-}
+            </div>
+            <div class="cerrar" onclick= "cerrarModal(${e.id})">
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" 
+                data-icon="times" class="svg-inline--fa fa-times fa-w-11" 
+                role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512">
+                <path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 
+                12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 
+                75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19
+                 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 
+                 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 
+                 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
+            </div>
+            </div>`
+
+        body.appendChild(div);
+
+        })
+
+};
+
+
 const verModal = e =>{
     const modalVer = document.getElementById(e);
     modalVer.style = "display:block"
@@ -154,6 +170,8 @@ const popularBoton =document.getElementsByClassName('categorias')[0];
 const topRatedBoton = document.getElementsByClassName('categorias')[1];
 const upcomingBoton = document.getElementsByClassName('categorias')[2];
 const nowPlayingBoton = document.getElementsByClassName('categorias')[3];
+
+
 //popular
 const pop = () =>{ 
     siContenedor();
