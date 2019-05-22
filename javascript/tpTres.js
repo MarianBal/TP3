@@ -45,26 +45,36 @@ const crearModal = e =>{
 
             const div = document.createElement('div');
             div.setAttribute('id', e.id);
+
+            div.onclick = () => div.style = "display:none";
+
             const estilo = () => div.classList.add('modal');
             div.style = "display:none";
-            const back =`https://image.tmdb.org/t/p/w500`;
-            const genres = movie.genres.map(e=>e.name).join(',')
+
+            const genres = movie.genres.map(e=>e.name).join(', ')
 
             estilo();
 
+            
+
             div.innerHTML = `<div class="contenedorModal">
-            <div class="modalEncabezado" style="background-image: url("${back}${movie.backdrop_path}")></div>
+            <div class="modalEncabezado" style="background-image: url(${dire}${movie.backdrop_path})></div>
             <div class="modalInformacion"></div>
             <div class="contenedorModalInfo">
                 <div class="modalPoster">
                     <img src="${dire}${movie.poster_path}"/>
                 </div>
                 <div class="modalInformacionPeli">
-                    <h4>${movie.original_title}</h4>
+                    <h4>${movie.title}</h4>
                     <p>${movie.tagline}</p>
-                    <span>${movie.overview}</span>
-                    <h4>genre</h4>
-                    <span>${genres}</span>
+                    <div class="masInfo">
+                        <span>${movie.overview}</span>
+                        <h5>genre</h5>
+                        <p>${genres}</p>
+                        <h5> release date</h5>
+                        <p>${movie.release_date}</p>
+                    </div>
+
                 </div>
             </div>
             <div class="cerrar" onclick= "cerrarModal(${e.id})">
@@ -113,7 +123,8 @@ const popular =`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&pag
 const topRated = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&page=${paginaActual}`
 const upcoming = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&page=${paginaActual}`
 const nowPlaying =`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=${paginaActual}`
-const dire = `https://image.tmdb.org/t/p/w370_and_h556_bestv2`;
+const dire = `https://image.tmdb.org/t/p/original`;
+
 
 
 //Home

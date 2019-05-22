@@ -322,9 +322,8 @@ body .modal .contenedorModal .modalEncabezado {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  background-color: white;
 }
-/* line 298, ../sass/style.scss */
+/* line 297, ../sass/style.scss */
 body .modal .contenedorModal .modalEncabezado:before {
   content: "";
   display: block;
@@ -337,7 +336,7 @@ body .modal .contenedorModal .modalEncabezado:before {
   background: #081c24;
   opacity: 0.85;
 }
-/* line 311, ../sass/style.scss */
+/* line 310, ../sass/style.scss */
 body .modal .contenedorModal .modalInformacion {
   display: flex;
   flex-direction: row;
@@ -345,7 +344,7 @@ body .modal .contenedorModal .modalInformacion {
   align-items: flex-start;
   flex-wrap: wrap;
 }
-/* line 316, ../sass/style.scss */
+/* line 315, ../sass/style.scss */
 body .modal .contenedorModal .cerrar {
   width: 40px;
   height: 40px;
@@ -358,17 +357,17 @@ body .modal .contenedorModal .cerrar {
   right: 0;
   cursor: pointer;
 }
-/* line 325, ../sass/style.scss */
+/* line 324, ../sass/style.scss */
 body .modal .contenedorModal .cerrar svg {
   width: 20px;
   height: 20px;
   color: white;
 }
-/* line 333, ../sass/style.scss */
+/* line 332, ../sass/style.scss */
 body .modal .contenedorModal .cerrar:hover {
   background-color: #bc3b69;
 }
-/* line 337, ../sass/style.scss */
+/* line 336, ../sass/style.scss */
 body .modal .contenedorModal .contenedorModalInfo {
   width: 100%;
   height: 100%;
@@ -381,7 +380,7 @@ body .modal .contenedorModal .contenedorModalInfo {
   align-items: center;
   box-sizing: border-box;
 }
-/* line 346, ../sass/style.scss */
+/* line 345, ../sass/style.scss */
 body .modal .contenedorModal .contenedorModalInfo .modalPoster {
   width: 50%;
   height: 100%;
@@ -390,12 +389,12 @@ body .modal .contenedorModal .contenedorModalInfo .modalPoster {
   justify-content: center;
   align-items: flex-start;
 }
-/* line 351, ../sass/style.scss */
+/* line 350, ../sass/style.scss */
 body .modal .contenedorModal .contenedorModalInfo .modalPoster img {
   width: 300px;
   margin-top: 40px;
 }
-/* line 357, ../sass/style.scss */
+/* line 356, ../sass/style.scss */
 body .modal .contenedorModal .contenedorModalInfo .modalInformacionPeli {
   width: 50%;
   height: 60%;
@@ -406,7 +405,7 @@ body .modal .contenedorModal .contenedorModalInfo .modalInformacionPeli {
   justify-content: flex-start;
   align-items: flex-start;
 }
-/* line 364, ../sass/style.scss */
+/* line 363, ../sass/style.scss */
 body .modal .contenedorModal .contenedorModalInfo .modalInformacionPeli h4 {
   font-size: 30px;
   font-weight: 500;
@@ -414,53 +413,71 @@ body .modal .contenedorModal .contenedorModalInfo .modalInformacionPeli h4 {
   color: #bc3b69;
   margin: 0;
 }
-/* line 372, ../sass/style.scss */
+/* line 371, ../sass/style.scss */
 body .modal .contenedorModal .contenedorModalInfo .modalInformacionPeli p {
   font-size: 14px;
   font-weight: 300;
   color: white;
   margin-top: 10px;
 }
-/* line 379, ../sass/style.scss */
-body .modal .contenedorModal .contenedorModalInfo .modalInformacionPeli span {
+/* line 378, ../sass/style.scss */
+body .modal .contenedorModal .contenedorModalInfo .modalInformacionPeli .masInfo {
+  position: absolute;
+  top: 358px;
+  padding-right: 30px;
+  box-sizing: border-box;
+}
+/* line 385, ../sass/style.scss */
+body .modal .contenedorModal .contenedorModalInfo .modalInformacionPeli .masInfo span {
   font-size: 14px;
   font-weight: 300;
   line-height: 1.8;
-  position: absolute;
-  top: 380px;
   color: #081c24;
   padding-right: 40px;
-  box-sizing: border-box;
+}
+/* line 394, ../sass/style.scss */
+body .modal .contenedorModal .contenedorModalInfo .modalInformacionPeli .masInfo h5 {
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: #bc3b69;
+}
+/* line 404, ../sass/style.scss */
+body .modal .contenedorModal .contenedorModalInfo .modalInformacionPeli .masInfo p {
+  color: #081c24;
+  margin-top: 5px;
 }
 
 @media screen and (max-width: 768px) {
-  /* line 400, ../sass/style.scss */
+  /* line 420, ../sass/style.scss */
   body nav {
     height: 50px;
   }
-  /* line 403, ../sass/style.scss */
+  /* line 423, ../sass/style.scss */
   body nav #logo {
     width: 55px;
     height: 50px;
     margin-right: 2%;
   }
-  /* line 408, ../sass/style.scss */
+  /* line 428, ../sass/style.scss */
   body nav #logo #capa_1 {
     width: 35px;
     height: 31px;
   }
-  /* line 414, ../sass/style.scss */
+  /* line 434, ../sass/style.scss */
   body nav .buscador {
     width: 75%;
     height: 50px;
     margin-right: 1%;
   }
-  /* line 419, ../sass/style.scss */
+  /* line 439, ../sass/style.scss */
   body nav .buscador svg {
     width: 14px;
     height: 14px;
   }
-  /* line 424, ../sass/style.scss */
+  /* line 444, ../sass/style.scss */
   body nav .buscador input {
     width: 60%;
     font-weight: 300;
@@ -469,13 +486,13 @@ body .modal .contenedorModal .contenedorModalInfo .modalInformacionPeli span {
     box-sizing: border-box;
     margin-left: 15px;
   }
-  /* line 434, ../sass/style.scss */
+  /* line 454, ../sass/style.scss */
   body nav #hamburguesa {
     display: inline !important;
     margin-right: 2%;
     cursor: pointer;
   }
-  /* line 441, ../sass/style.scss */
+  /* line 461, ../sass/style.scss */
   body .contenedor {
     width: 100%;
     display: flex;
@@ -483,54 +500,54 @@ body .modal .contenedorModal .contenedorModalInfo .modalInformacionPeli span {
     justify-content: flex-start;
     align-items: flex-start;
   }
-  /* line 445, ../sass/style.scss */
+  /* line 465, ../sass/style.scss */
   body .contenedor ul {
     display: none;
   }
-  /* line 452, ../sass/style.scss */
+  /* line 472, ../sass/style.scss */
   body .contenedorVertical .presentacion {
     height: 200px;
   }
-  /* line 455, ../sass/style.scss */
+  /* line 475, ../sass/style.scss */
   body .contenedorVertical .presentacion .opacidad {
     height: 200px;
   }
-  /* line 459, ../sass/style.scss */
+  /* line 479, ../sass/style.scss */
   body .contenedorVertical .presentacion .texto {
     height: 200px;
   }
-  /* line 462, ../sass/style.scss */
+  /* line 482, ../sass/style.scss */
   body .contenedorVertical .presentacion .texto h1 {
     font-size: 22px;
   }
-  /* line 468, ../sass/style.scss */
+  /* line 488, ../sass/style.scss */
   body .contenedorVertical .contenedorPeliculas {
     padding: 10px;
   }
-  /* line 471, ../sass/style.scss */
+  /* line 491, ../sass/style.scss */
   body .contenedorVertical .contenedorPeliculas nav {
     padding: 20px 10px;
   }
-  /* line 474, ../sass/style.scss */
+  /* line 494, ../sass/style.scss */
   body .contenedorVertical .contenedorPeliculas nav h2 {
     font-size: 16px;
   }
-  /* line 480, ../sass/style.scss */
+  /* line 500, ../sass/style.scss */
   body .contenedorVertical .contenedorPeliculas ul .pelis {
     width: 50%;
     height: 100%;
   }
-  /* line 484, ../sass/style.scss */
+  /* line 504, ../sass/style.scss */
   body .contenedorVertical .contenedorPeliculas ul .pelis .tituloPeli {
     width: 100%;
     font-size: 12px;
     text-align: left;
   }
-  /* line 491, ../sass/style.scss */
+  /* line 511, ../sass/style.scss */
   body .contenedorVertical .contenedorPeliculas ul .quinta {
     display: none;
   }
-  /* line 498, ../sass/style.scss */
+  /* line 518, ../sass/style.scss */
   body .menuH {
     width: 100%;
     height: 80vh;
@@ -544,7 +561,7 @@ body .modal .contenedorModal .contenedorModalInfo .modalInformacionPeli span {
     margin: 0;
     padding: 0;
   }
-  /* line 508, ../sass/style.scss */
+  /* line 528, ../sass/style.scss */
   body .menuH .menuHamb {
     width: 50%;
     height: 50%;
@@ -554,19 +571,19 @@ body .modal .contenedorModal .contenedorModalInfo .modalInformacionPeli span {
     align-items: center;
     cursor: pointer;
   }
-  /* line 514, ../sass/style.scss */
+  /* line 534, ../sass/style.scss */
   body .menuH .menuHamb svg {
     width: 20px;
     height: 20px;
     color: white;
     margin-bottom: 3px;
   }
-  /* line 521, ../sass/style.scss */
+  /* line 541, ../sass/style.scss */
   body .menuH .menuHamb p {
     margin-bottom: 10px;
   }
 }
-/* line 530, ../sass/style.scss */
+/* line 550, ../sass/style.scss */
 .noVisible {
   display: none !important;
 }

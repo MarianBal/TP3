@@ -291,8 +291,7 @@ body{
                 position: relative;
                 background-size: cover;
                 background-repeat: no-repeat;
-                background-position: 50% 50%; 
-                background-color: rgba(255, 255, 255, 1);    
+                background-position: 50% 50%;    
             }
 
             .modalEncabezado:before{
@@ -375,23 +374,44 @@ body{
                         color: $fondo;
                         margin-top: 10px;
                     }
-
-                    span{
-                        font-size: 14px;
-                        font-weight: 300;
-                        line-height: 1.8;
-                        position:absolute;
-                        top:380px;
-                        color:$oscuro;
-                        padding-right: 40px;
-                        @include borderBox();
-                    }
                     
+                    .masInfo{
+
+                        position: absolute;
+                        top: 358px;
+                        padding-right: 30px;
+                        @include borderBox();
+
+                        span{
+                            font-size: 14px;
+                            font-weight: 300;
+                            line-height: 1.8;
+                            color:$oscuro;
+                            padding-right: 40px;
+                        }
+    
+
+                        h5{
+                            margin-top: 10px;
+                            margin-bottom: 0;
+                            font-weight: 400;
+                            text-transform: uppercase;
+                            font-size: 16px;
+                            color: $logo;
+
+                        }
+
+                        p{
+                            color: $oscuro;
+                            margin-top: 5px;
+                        }
+                    }
                 }
-            }    
-        }
+            }
+        }    
     }
 }
+
 
 @media screen and (max-width: 768px) {
 
