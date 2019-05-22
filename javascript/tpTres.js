@@ -91,10 +91,21 @@ const verModal = e =>{
     const modalVer = document.getElementById(e);
     modalVer.style = "display:block"
 }
+
+const verModalLista = e =>{
+    const modalVer = document.getElementById(e);
+    modalVer.style = "display:block"
+
+    const borrarLista = document.getElementById('resultados');
+    borrarLista.style = "display:none"
+    input.value = "";
+
+}
 const cerrarModal = e =>{
     const modalVer = document.getElementById(e);
     modalVer.style = "display:none"
 }
+
 //Api
 const apiKey= `8bdfee1cadeaa7c6f8c489f17f927c3d`;
 let paginaActual = 1;
@@ -103,7 +114,6 @@ const topRated = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}
 const upcoming = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&page=${paginaActual}`
 const nowPlaying =`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=${paginaActual}`
 const dire = `https://image.tmdb.org/t/p/w370_and_h556_bestv2`;
-
 
 
 //Home
@@ -385,16 +395,9 @@ input.onkeyup = () =>{
         const movies = data.results;
         const ul = document.getElementById('resultados');
         movies.map(e=>crearModal(e));
-        ul.innerHTML = movies.map(movie => `<li class="lista" onclick="verModal(${movie.id})">${movie.title}</li>`).join('');
+        ul.innerHTML = movies.map(movie => `<li class="lista" onclick="verModalLista(${movie.id})">${movie.title}</li>`).join('');
         ul.style.display = 'block';
-        document
-            .querySelectorAll('lista')
-            .forEach(function (li) {
-               li.addEventListener('click', function (e) {
-               input.value = e.target.innerHTML;
-               ul.style.display = 'none';
-               })
-               
-            })
+
     })
 }
+
