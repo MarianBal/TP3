@@ -100,6 +100,10 @@ const crearModal = e =>{
 const verModal = e =>{
     const modalVer = document.getElementById(e);
     modalVer.style = "display:block"
+
+    const borrarScroll = () => contenedor.classList.add('chauScroll');
+    console.log(contenedor)
+    borrarScroll();
 }
 
 const verModalLista = e =>{

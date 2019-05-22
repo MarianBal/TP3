@@ -706,3 +706,9 @@ body .modal .contenedorModal .contenedorModalInfo .modalInformacionPeli .masInfo
 .noVisible {
   display: none !important;
 }
+
+/* line 667, ../sass/style.scss */
+.chauScroll {
+  height: 80vh;
+  overflow: hidden !important;
+}
