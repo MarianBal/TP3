@@ -55,8 +55,6 @@ const crearModal = e =>{
 
             estilo();
 
-            console.log(`${dire}${movie.backdrop_path}`)
-
             div.innerHTML = `<div class="contenedorModal">
             <div class="modalEncabezado" style="background-image: url(${dire}${movie.backdrop_path})"></div>
             <div class="modalInformacion"></div>
@@ -109,6 +107,10 @@ const verModal = e =>{
 const verModalLista = e =>{
     const modalVer = document.getElementById(e);
     modalVer.style = "display:block"
+
+    const borrarScroll = () => contenedor.classList.add('chauScroll');
+
+    borrarScroll();
 
     const borrarLista = document.getElementById('resultados');
     borrarLista.style = "display:none"
