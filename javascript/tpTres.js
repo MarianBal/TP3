@@ -102,7 +102,7 @@ const verModal = e =>{
     modalVer.style = "display:block"
 
     const borrarScroll = () => contenedor.classList.add('chauScroll');
-    console.log(contenedor)
+
     borrarScroll();
 }
 
@@ -118,6 +118,12 @@ const verModalLista = e =>{
 const cerrarModal = e =>{
     const modalVer = document.getElementById(e);
     modalVer.style = "display:none"
+
+    const volverScroll = () => contenedor.classList.remove('chauScroll');
+    
+    volverScroll();
+    
+
 }
 
 //Api
