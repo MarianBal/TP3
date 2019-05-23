@@ -46,7 +46,7 @@ const crearModal = e =>{
             const div = document.createElement('div');
             div.setAttribute('id', e.id);
 
-            div.onclick = () => div.style = "display:none";
+            // div.onclick = () => div.style = "display:none";
 
             const estilo = () => div.classList.add('modal');
             div.style = "display:none";
@@ -55,10 +55,10 @@ const crearModal = e =>{
 
             estilo();
 
-            
+            console.log(`${dire}${movie.backdrop_path}`)
 
             div.innerHTML = `<div class="contenedorModal">
-            <div class="modalEncabezado" style="background-image: url(${dire}${movie.backdrop_path})></div>
+            <div class="modalEncabezado" style="background-image: url(${dire}${movie.backdrop_path})"></div>
             <div class="modalInformacion"></div>
             <div class="contenedorModalInfo">
                 <div class="modalPoster">
@@ -120,6 +120,7 @@ const cerrarModal = e =>{
     modalVer.style = "display:none"
 
     const volverScroll = () => contenedor.classList.remove('chauScroll');
+    console.log('algo')
     
     volverScroll();
     
