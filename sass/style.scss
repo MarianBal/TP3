@@ -121,6 +121,7 @@ body{
                 font-size: 9px;
                 text-transform: uppercase;
                 text-align: center;
+                border-bottom: 1px solid $contenedor;
                 cursor:pointer;
                 @include flexbox(column, center, center);
 
@@ -144,7 +145,6 @@ body{
         padding:0;
         background-color: $contenedor;
         @include flexbox(column, flex-start, center);
-    
 
         .presentacion{
             width: 100%;
@@ -668,3 +668,4 @@ body{
     height: 80vh;
     overflow: hidden !important;
 }
+   

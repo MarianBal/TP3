@@ -55,6 +55,7 @@ const crearModal = e =>{
 
             estilo();
 
+
             div.innerHTML = `<div class="contenedorModal">
             <div class="modalEncabezado" style="background-image: url(${dire}${movie.backdrop_path})"></div>
             <div class="modalInformacion"></div>

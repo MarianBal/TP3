@@ -130,24 +130,25 @@ body .contenedor ul .categorias {
   font-size: 9px;
   text-transform: uppercase;
   text-align: center;
+  border-bottom: 1px solid #f8f8f8;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-/* line 127, ../sass/style.scss */
+/* line 128, ../sass/style.scss */
 body .contenedor ul .categorias svg {
   width: 20px;
   height: 20px;
   color: white;
   margin-bottom: 5px;
 }
-/* line 134, ../sass/style.scss */
+/* line 135, ../sass/style.scss */
 body .contenedor ul .categorias p {
   margin-bottom: 10px;
 }
-/* line 141, ../sass/style.scss */
+/* line 142, ../sass/style.scss */
 body .contenedorVertical {
   width: 100%;
   margin: 0;
