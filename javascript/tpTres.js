@@ -53,18 +53,27 @@ const crearModal = e =>{
 
             estilo();
 
+            const abrirModal = document.querySelector('contenedorModal');
+
             const cargarModal = () =>{
 
                 const spinner = document.querySelector ('.spinner');
                 const cerrarSpinner = () => spinner.classList.add('noVisible');
                 cerrarSpinner();
 
+                const mostrarModal = abrirModal.classList.remove('noVisible')
+
+                mostrarModal();
+
             }
+
+            // abrirModal.addEventListener('load', cargarModal())
+            
 
             div.innerHTML = `
             <div class="spinner"></div>
 
-            <div class="contenedorModal" load="cargarModal()">
+            <div class="contenedorModal noVisible">
             <div class="modalEncabezado" style="background-image: url(${dire}${movie.backdrop_path})"></div>
             <div class="modalInformacion"></div>
             <div class="contenedorModalInfo">
