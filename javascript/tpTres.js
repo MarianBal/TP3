@@ -46,8 +46,6 @@ const crearModal = e =>{
             const div = document.createElement('div');
             div.setAttribute('id', e.id);
 
-            // div.onclick = () => div.style = "display:none";
-
             const estilo = () => div.classList.add('modal');
             div.style = "display:none";
 
@@ -55,8 +53,18 @@ const crearModal = e =>{
 
             estilo();
 
+            const cargarModal = () =>{
 
-            div.innerHTML = `<div class="contenedorModal">
+                const spinner = document.querySelector ('.spinner');
+                const cerrarSpinner = () => spinner.classList.add('noVisible');
+                cerrarSpinner();
+
+            }
+
+            div.innerHTML = `
+            <div class="spinner"></div>
+
+            <div class="contenedorModal" load="cargarModal()">
             <div class="modalEncabezado" style="background-image: url(${dire}${movie.backdrop_path})"></div>
             <div class="modalInformacion"></div>
             <div class="contenedorModalInfo">

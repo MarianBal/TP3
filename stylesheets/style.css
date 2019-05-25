@@ -713,3 +713,37 @@ body .modal .contenedorModal .contenedorModalInfo .modalInformacionPeli .masInfo
   height: 80vh;
   overflow: hidden !important;
 }
+
+/* line 672, ../sass/style.scss */
+.spinner, .spinner:after {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 32;
+}
+
+/* line 682, ../sass/style.scss */
+.spinner {
+  background-color: transparent;
+  border-top: 5px solid white;
+  border-right: 5px solid white;
+  border-bottom: 5px solid white;
+  border-left: 5px solid rgba(255, 255, 255, 0.2);
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: .8s;
+  animation-name: spinner-loading;
+}
+
+@keyframes spinner-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
