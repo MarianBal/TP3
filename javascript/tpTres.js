@@ -36,7 +36,7 @@ const menuHamburguesa = () =>{
 //Modal
 
 const crearModal = e =>{
-    const peliculaId = e.id;
+    const peliculaId = e;
     const buscarPeli = `https://api.themoviedb.org/3/movie/${peliculaId}?api_key=${apiKey}`
 
     fetch (buscarPeli)
@@ -44,10 +44,9 @@ const crearModal = e =>{
         .then(movie => { 
 
             const div = document.createElement('div');
-            div.setAttribute('id', e.id);
+            div.setAttribute('id', e);
 
             const estilo = () => div.classList.add('modal');
-            div.style = "display:none";
 
             const genres = movie.genres.map(e=>e.name).join(', ')
 
@@ -66,14 +65,12 @@ const crearModal = e =>{
                 mostrarModal();
 
             }
-
-            // abrirModal.addEventListener('load', cargarModal())
             
 
             div.innerHTML = `
             <div class="spinner"></div>
 
-            <div class="contenedorModal noVisible">
+            <div class="contenedorModal">
             <div class="modalEncabezado" style="background-image: url(${dire}${movie.backdrop_path})"></div>
             <div class="modalInformacion"></div>
             <div class="contenedorModalInfo">
@@ -106,21 +103,29 @@ const crearModal = e =>{
             </div>
             </div>`
 
+            const borrarScroll = () => contenedor.classList.add('chauScroll');
+
+            borrarScroll();
+
         body.appendChild(div);
+
+        const borrarLista = document.getElementById('resultados');
+    borrarLista.style = "display:none"
+    input.value = "";
 
         })
 
 };
 
 
-const verModal = e =>{
-    const modalVer = document.getElementById(e);
-    modalVer.style = "display:block"
+// const verModal = e =>{
+//     const modalVer = document.getElementById(e);
+//     modalVer.style = "display:block"
 
-    const borrarScroll = () => contenedor.classList.add('chauScroll');
+//     const borrarScroll = () => contenedor.classList.add('chauScroll');
 
-    borrarScroll();
-}
+//     borrarScroll();
+// }
 
 const verModalLista = e =>{
     const modalVer = document.getElementById(e);
@@ -156,6 +161,8 @@ const upcoming = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&
 const nowPlaying =`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=${paginaActual}`
 const dire = `https://image.tmdb.org/t/p/original`;
 
+const lalala = e => console.log(e);
+
 
 
 //Home
@@ -171,11 +178,9 @@ const ada = () => {
         .then(res => res.json())
         .then(movie => {
             for (let i=0; i<5; i++){
-
-                crearModal(movie.results[i]);
                 
-                pelis[j].innerHTML = `<div class="imagen" onclick="verModal(${movie.results[i].id})"><img src="${dire}${movie.results[i].poster_path}"/></div>
-                                    <div class="tituloPeli" onclick="verModal(${movie.results[i].id})">${movie.results[i].title}</div>`
+                pelis[j].innerHTML = `<div class="imagen" onclick="crearModal(${movie.results[i].id})"><img src="${dire}${movie.results[i].poster_path}"/></div>
+                                    <div class="tituloPeli" onclick="crearModal(${movie.results[i].id})">${movie.results[i].title}</div>`
                 j++
             }
         })
@@ -183,11 +188,9 @@ const ada = () => {
         .then(res => res.json())
         .then(movie => {
             for (let i=0; i<5; i++){
-
-                crearModal(movie.results[i]);
                 
-                pelis[j].innerHTML = `<div class="imagen" onclick="verModal(${movie.results[i].id})"><img src="${dire}${movie.results[i].poster_path}"/></div>
-                                    <div class="tituloPeli" onclick="verModal(${movie.results[i].id})">${movie.results[i].title}</div>`
+                pelis[j].innerHTML = `<div class="imagen" onclick="crearModal(${movie.results[i].id})"><img src="${dire}${movie.results[i].poster_path}"/></div>
+                                    <div class="tituloPeli" onclick="crearModal(${movie.results[i].id})">${movie.results[i].title}</div>`
                 j++
             } 
         })
@@ -195,11 +198,9 @@ const ada = () => {
         .then(res => res.json())
         .then(movie => {
             for (let i=0; i<5; i++){
-
-                crearModal(movie.results[i]);
                 
-                pelis[j].innerHTML = `<div class="imagen" onclick="verModal(${movie.results[i].id})"><img src="${dire}${movie.results[i].poster_path}"/></div>
-                                    <div class="tituloPeli" onclick="verModal(${movie.results[i].id})">${movie.results[i].title}</div>`
+                pelis[j].innerHTML = `<div class="imagen" onclick="crearModal(${movie.results[i].id})"><img src="${dire}${movie.results[i].poster_path}"/></div>
+                                    <div class="tituloPeli" onclick="crearModal(${movie.results[i].id})">${movie.results[i].title}</div>`
                 
                 j++
             }
@@ -209,10 +210,9 @@ const ada = () => {
         .then(movie => {
             for (let i=0; i<5; i++){
 
-                crearModal(movie.results[i]);
                 
-                pelis[j].innerHTML = `<div class="imagen" onclick="verModal(${movie.results[i].id})"><img src="${dire}${movie.results[i].poster_path}"/></div>
-                                    <div class="tituloPeli" onclick="verModal(${movie.results[i].id})">${movie.results[i].title}</div>`
+                pelis[j].innerHTML = `<div class="imagen" onclick="crearModal(${movie.results[i].id})"><img src="${dire}${movie.results[i].poster_path}"/></div>
+                                    <div class="tituloPeli" onclick="crearModal(${movie.results[i].id})">${movie.results[i].title}</div>`
                 j++
             }
         })
@@ -418,11 +418,10 @@ const nowpBoton = () =>{
         const movies = movie.results;
         const ul = document.querySelector(".verPelis")
     
-        movies.map(e=>crearModal(e));
         ul.innerHTML = movies.map(e=>{
             return `<li class="pelis">
-            <div class="imagen" onclick="verModal(${e.id})"><img src="${dire}${e.poster_path}"/></div>
-            <div class="tituloPeli" onclick="verModal(${e.id})">${e.title}</div>
+            <div class="imagen" onclick="crearModal(${e.id})"><img src="${dire}${e.poster_path}"/></div>
+            <div class="tituloPeli" onclick="crearModal(${e.id})">${e.title}</div>
             </li>`
         }).join('') + `<div class="boton"><button onclick="upcomBoton()">load more</button></div>`;
     
