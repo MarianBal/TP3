@@ -109,11 +109,18 @@ const crearModal = e =>{
         const cargarModal = () =>{
 
             const spinner = document.querySelector ('.spinner');
-            const cerrarSpinner = () => spinner.classList.add('noVisible');
-            const mostrarModal = () => abrirModal.classList.remove('noVisible');
+            console.log("spinner")
+            const cerrarSpinner = () => {
+                setTimeout(() => spinner.classList.add('noVisible'), 300);
+                
+            }
+            const mostrarModal = () => {
+                setTimeout(() => abrirModal.classList.remove('noVisible'), 300);
+            }
 
-            cerrarSpinner();
-            mostrarModal();
+            cerrarSpinner()
+            
+            mostrarModal()
 
         }
         
