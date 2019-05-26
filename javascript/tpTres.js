@@ -103,11 +103,12 @@ const crearModal = e =>{
 
         //spinner
 
+        const abrirModal = document.querySelector('.contenedorModal');
+
+
         const cargarModal = () =>{
 
             const spinner = document.querySelector ('.spinner');
-            const abrirModal = document.querySelector('.contenedorModal');
-            console.log(spinner)
             const cerrarSpinner = () => spinner.classList.add('noVisible');
             const mostrarModal = () => abrirModal.classList.remove('noVisible');
 
@@ -115,10 +116,8 @@ const crearModal = e =>{
             mostrarModal();
 
         }
-
-            const abrirModal = document.querySelector('.contenedorModal');
-                console.log(abrirModal)
-                abrirModal.addEventListener('load', cargarModal());
+        
+        abrirModal.addEventListener('load', cargarModal());
 
         })
 
