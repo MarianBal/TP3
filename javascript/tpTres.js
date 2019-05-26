@@ -44,7 +44,7 @@ const crearModal = e =>{
         .then(movie => { 
 
             const div = document.createElement('div');
-            div.setAttribute('id', e);
+            // div.setAttribute('id', e);
 
             const estilo = () => div.classList.add('modal');
 
@@ -52,25 +52,11 @@ const crearModal = e =>{
 
             estilo();
 
-            const abrirModal = document.querySelector('contenedorModal');
-
-            const cargarModal = () =>{
-
-                const spinner = document.querySelector ('.spinner');
-                const cerrarSpinner = () => spinner.classList.add('noVisible');
-                cerrarSpinner();
-
-                const mostrarModal = abrirModal.classList.remove('noVisible')
-
-                mostrarModal();
-
-            }
             
-
             div.innerHTML = `
             <div class="spinner"></div>
 
-            <div class="contenedorModal">
+            <div class="contenedorModal noVisible">
             <div class="modalEncabezado" style="background-image: url(${dire}${movie.backdrop_path})"></div>
             <div class="modalInformacion"></div>
             <div class="contenedorModalInfo">
@@ -109,9 +95,30 @@ const crearModal = e =>{
 
         body.appendChild(div);
 
+        //lista búsqueda
+
         const borrarLista = document.getElementById('resultados');
         borrarLista.style = "display:none"
         input.value = "";
+
+        //spinner
+
+        const cargarModal = () =>{
+
+            const spinner = document.querySelector ('.spinner');
+            const abrirModal = document.querySelector('.contenedorModal');
+            console.log(spinner)
+            const cerrarSpinner = () => spinner.classList.add('noVisible');
+            const mostrarModal = () => abrirModal.classList.remove('noVisible');
+
+            cerrarSpinner();
+            mostrarModal();
+
+        }
+
+            const abrirModal = document.querySelector('.contenedorModal');
+                console.log(abrirModal)
+                abrirModal.addEventListener('load', cargarModal());
 
         })
 
