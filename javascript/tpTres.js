@@ -90,7 +90,7 @@ const crearModal = e =>{
 
                 </div>
             </div>
-            <div class="cerrar" onclick= "cerrarModal(${e.id})">
+            <div class="cerrar" onclick= "cerrarModal()">
                 <svg aria-hidden="true" focusable="false" data-prefix="fas" 
                 data-icon="times" class="svg-inline--fa fa-times fa-w-11" 
                 role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512">
@@ -110,42 +110,18 @@ const crearModal = e =>{
         body.appendChild(div);
 
         const borrarLista = document.getElementById('resultados');
-    borrarLista.style = "display:none"
-    input.value = "";
+        borrarLista.style = "display:none"
+        input.value = "";
 
         })
 
 };
 
-
-// const verModal = e =>{
-//     const modalVer = document.getElementById(e);
-//     modalVer.style = "display:block"
-
-//     const borrarScroll = () => contenedor.classList.add('chauScroll');
-
-//     borrarScroll();
-// }
-
-// const verModalLista = e =>{
-//     const modalVer = document.getElementById(e);
-//     modalVer.style = "display:block"
-
-//     const borrarScroll = () => contenedor.classList.add('chauScroll');
-
-//     borrarScroll();
-
-//     const borrarLista = document.getElementById('resultados');
-//     borrarLista.style = "display:none"
-//     input.value = "";
-
-// }
-const cerrarModal = e =>{
-    const modalVer = document.getElementById(e);
-    modalVer.style = "display:none"
+const cerrarModal = () =>{
+    const modalVer = document.querySelector('.modal');
+    modalVer.remove();
 
     const volverScroll = () => contenedor.classList.remove('chauScroll');
-    
     volverScroll();
     
 
