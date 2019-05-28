@@ -64,6 +64,19 @@ body{
                     width: 45px;
                     height: 40px;
                     margin:0;
+                    -webkit-transition:-webkit-transform 1s ease-out;
+                    -moz-transition:-moz-transform 1s ease-out;
+                    -o-transition:-o-transform 1s ease-out;
+                    -ms-transition:-ms-transform 1s ease-out;
+                    transition:transform 1s ease-out;
+                }
+                
+                #capa_1:hover{
+                    -moz-transform: scale(1.1);
+                    -webkit-transform: scale(1.1);
+                    -o-transform: scale(1.1);
+                    -ms-transform: scale(1.1);
+                    transform: scale(1.1)
                 }
             } 
 
@@ -130,6 +143,19 @@ body{
                     height: 20px;
                     color: $fondo;  
                     margin-bottom: 5px;
+                    -webkit-transition:-webkit-transform 1s ease-out;
+                    -moz-transition:-moz-transform 1s ease-out;
+                    -o-transition:-o-transform 1s ease-out;
+                    -ms-transition:-ms-transform 1s ease-out;
+                    transition:transform 1s ease-out;
+                }
+
+                svg:hover{
+                    -moz-transform: scale(1.1);
+                    -webkit-transform: scale(1.1);
+                    -o-transform: scale(1.1);
+                    -ms-transform: scale(1.1);
+                    transform: scale(1.1)
                 }
 
                 p{
@@ -229,6 +255,19 @@ body{
                         width:100%;
                         height:auto;
                         cursor: pointer;
+                        -webkit-transition:-webkit-transform 1s ease-out;
+                        -moz-transition:-moz-transform 1s ease-out;
+                        -o-transition:-o-transform 1s ease-out;
+                        -ms-transition:-ms-transform 1s ease-out;
+                        transition:transform 1s ease-out;
+                        }
+                        img:hover{
+                            -moz-transform: scale(1.1);
+                            -webkit-transform: scale(1.1);
+                            -o-transform: scale(1.1);
+                            -ms-transform: scale(1.1);
+                            transform: scale(1.1)
+
                         }
                     }
 
